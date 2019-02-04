@@ -10,6 +10,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
+// TODO missing variant with soft assertions
+// TODO Test does not launching
 public class TestEpamHomePage extends SeleniumBase {
     private WebDriver chromeDriver;
 
