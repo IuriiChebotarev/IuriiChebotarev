@@ -9,8 +9,7 @@ import org.testng.annotations.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
-// TODO missing variant with soft assertions
-// TODO Test does not launching
+
 public class TestEpamHomePage extends SeleniumBase {
     private WebDriver chromeDriver;
 
@@ -22,7 +21,6 @@ public class TestEpamHomePage extends SeleniumBase {
 
     @Test
     public void testEpamHomePage() {
-        // TODO What is the purpose of using window handle?--Code is removed as unnecessary
         //1 Open test site by URL
         chromeDriver.navigate().to("https://epam.github.io/JDI/");
 
@@ -36,7 +34,6 @@ public class TestEpamHomePage extends SeleniumBase {
         chromeDriver.findElement(By.cssSelector("[id='login-button']")).click();
 
         //4 Assert User name in the left-top side of screen that user is loggined
-        // TODO What do you expect from line 42?--Comment is added
         assertTrue(chromeDriver.findElement(By.cssSelector("#user-name")).isDisplayed());
         // Check that user name "PITER CHAILOVSKII" is dispayed in left-top side of screen
         assertEquals(chromeDriver.findElement(By.cssSelector("#user-name")).getText(), "PITER CHAILOVSKII");
@@ -45,33 +42,30 @@ public class TestEpamHomePage extends SeleniumBase {
         assertEquals(chromeDriver.getTitle(), "Home Page");
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
-        /* TODO
-            * Please try to avoid code duplication--FIXED
-            * I suppose the locators could be improved here--FIXED
-            * What do you expect from execution element.isDisplayed()?--?
-         */
+        // TODO Please review Java Code Convention about naming of variables
         WebElement HomePage= chromeDriver.findElement(By.cssSelector("[href='index.html']"));
         HomePage.isDisplayed();
         assertEquals(HomePage.getText(), "HOME");
+        // TODO Please review Java Code Convention about naming of variables
         WebElement ContactForm=chromeDriver.findElement(By.cssSelector("[href='contacts.html']"));
         ContactForm.isDisplayed();
         assertEquals(ContactForm.getText(), "CONTACT FORM");
+        // TODO Please review Java Code Convention about naming of variables
         WebElement Service=chromeDriver.findElement(By.cssSelector("[data-toggle='dropdown']"));
         Service.isDisplayed();
         assertEquals(Service.getText(), "SERVICE");
+        // TODO Please review Java Code Convention about naming of variables
         WebElement MetalsAndColors=chromeDriver.findElement(By.cssSelector("[href='metals-colors.html']"));
         MetalsAndColors.isDisplayed();
         assertEquals(MetalsAndColors.getText(), "METALS & COLORS");
 
         //7 Assert that there are 4 images on the Index Page and they are displayed
-        // TODO What do you expect from this step--?
         assertTrue(chromeDriver.findElement(By.cssSelector(".icons-benefit.icon-practise")).isDisplayed());
         assertTrue(chromeDriver.findElement(By.cssSelector(".icons-benefit.icon-custom")).isDisplayed());
         assertTrue(chromeDriver.findElement(By.cssSelector(".icons-benefit.icon-multi")).isDisplayed());
         assertTrue(chromeDriver.findElement(By.cssSelector(".icons-benefit.icon-base")).isDisplayed());
 
         //8 Assert that there are 4 texts on the Index Page under icons and they have proper text
-        // TODO I suggest think about simplifying locators in current step--FIXED
         assertEquals(chromeDriver.findElement(By.cssSelector("div.col-sm-3:nth-child(1)")).getText(), "To include good practices\nand ideas from successful\nEPAM project");
         assertEquals(chromeDriver.findElement(By.cssSelector("div.col-sm-3:nth-child(2)")).getText(), "To be flexible and\ncustomizable");
         assertEquals(chromeDriver.findElement(By.cssSelector("div.col-sm-3:nth-child(3)")).getText(), "To be multiplatform");
@@ -79,10 +73,8 @@ public class TestEpamHomePage extends SeleniumBase {
 
         //9 Assert a text of the main headers
         assertEquals((chromeDriver.findElement(By.cssSelector(".main-title.text-center"))).getText(), "EPAM FRAMEWORK WISHES…");
-        // TODO What do you expect from this method invocation?--?
         assertTrue(chromeDriver.findElement(By.cssSelector(".main-title.text-center")).isDisplayed());
         assertEquals((chromeDriver.findElement(By.cssSelector(".main-txt.text-center"))).getText(), "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.");
-        // TODO What do you expect from this method invocation?--?
         chromeDriver.findElement(By.cssSelector(".main-txt.text-center")).isDisplayed();
 
         //10 Assert that there is the iframe in the center of page
@@ -97,13 +89,13 @@ public class TestEpamHomePage extends SeleniumBase {
         chromeDriver.switchTo().defaultContent();
 
         //13 Assert a text of the sub header
-        // TODO Please try to avoid code duplications--FIXED
+        // TODO Please review Java Code Convention about naming of variables
         WebElement SubHeader=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
         assertTrue(SubHeader.isDisplayed());
         assertEquals(SubHeader.getText(), "JDI GITHUB");
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        // TODO Please try to avoid code duplications--FIXED
+        // TODO Please review Java Code Convention about naming of variables
         WebElement JdiGithub=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
         assertEquals(JdiGithub.getAttribute("ui"), "link");
         assertEquals(JdiGithub.getAttribute("href"), "https://github.com/epam/JDI");
