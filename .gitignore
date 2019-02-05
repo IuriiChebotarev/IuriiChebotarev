@@ -3,3 +3,5 @@
 // TODO What about target folder? Do you plan include it to the repo?
 /IuriiChebotarev.iml
 /.idea/
+target
+*.iml
