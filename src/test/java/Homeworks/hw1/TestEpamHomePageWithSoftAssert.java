@@ -45,18 +45,18 @@ public class TestEpamHomePageWithSoftAssert extends SeleniumBase {
         softAssert.assertEquals(chromeDriver.getTitle(), "Home Page");
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
-        WebElement HomePage= chromeDriver.findElement(By.cssSelector("[href='index.html']"));
-        HomePage.isDisplayed();
-        softAssert.assertEquals(HomePage.getText(), "HOME");
-        WebElement ContactForm=chromeDriver.findElement(By.cssSelector("[href='contacts.html']"));
-        ContactForm.isDisplayed();
-        softAssert.assertEquals(ContactForm.getText(), "CONTACT FORM");
-        WebElement Service=chromeDriver.findElement(By.cssSelector("[data-toggle='dropdown']"));
-        Service.isDisplayed();
-        softAssert.assertEquals(Service.getText(), "SERVICE");
-        WebElement MetalsAndColors=chromeDriver.findElement(By.cssSelector("[href='metals-colors.html']"));
-        MetalsAndColors.isDisplayed();
-        softAssert.assertEquals(MetalsAndColors.getText(), "METALS & COLORS");
+        WebElement homePage= chromeDriver.findElement(By.cssSelector("[href='index.html']"));
+        homePage.isDisplayed();
+        softAssert.assertEquals(homePage.getText(), "HOME");
+        WebElement contactForm=chromeDriver.findElement(By.cssSelector("[href='contacts.html']"));
+        contactForm.isDisplayed();
+        softAssert.assertEquals(contactForm.getText(), "CONTACT FORM");
+        WebElement service=chromeDriver.findElement(By.cssSelector("[data-toggle='dropdown']"));
+        service.isDisplayed();
+        softAssert.assertEquals(service.getText(), "SERVICE");
+        WebElement metalsAndColors=chromeDriver.findElement(By.cssSelector("[href='metals-colors.html']"));
+        metalsAndColors.isDisplayed();
+        softAssert.assertEquals(metalsAndColors.getText(), "METALS & COLORS");
 
         //7 Assert that there are 4 images on the Index Page and they are displayed
         softAssert.assertTrue(chromeDriver.findElement(By.cssSelector(".icons-benefit.icon-practise")).isDisplayed());
@@ -88,14 +88,14 @@ public class TestEpamHomePageWithSoftAssert extends SeleniumBase {
         chromeDriver.switchTo().defaultContent();
 
         //13 Assert a text of the sub header
-        WebElement SubHeader=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
-        softAssert.assertTrue(SubHeader.isDisplayed());
-        softAssert.assertEquals(SubHeader.getText(), "JDI GITHUB");
+        WebElement subHeader=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
+        softAssert.assertTrue(subHeader.isDisplayed());
+        softAssert.assertEquals(subHeader.getText(), "JDI GITHUB");
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        WebElement JdiGithub=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
-        softAssert.assertEquals(JdiGithub.getAttribute("ui"), "link");
-        softAssert.assertEquals(JdiGithub.getAttribute("href"), "https://github.com/epam/JDI");
+        WebElement jdiGithub=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
+        softAssert.assertEquals(jdiGithub.getAttribute("ui"), "link");
+        softAssert.assertEquals(jdiGithub.getAttribute("href"), "https://github.com/epam/JDI");
 
         //15 Assert that there is Left Section
         softAssert.assertTrue(chromeDriver.findElement(By.cssSelector("#mCSB_1")).isDisplayed());

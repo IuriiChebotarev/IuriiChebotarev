@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeSuite;
 // TODO missing empty space between imports and code. Please format code for Java Code Convention
 public class SeleniumBase {
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void beforeSuit() {
         /* TODO
             * I do not recommend use static import for setProperty method--FIXED
