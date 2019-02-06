@@ -15,9 +15,9 @@ public class TestEpamHomePageWithAnnotations extends SeleniumBase {
     public WebDriver chromeDriver;
     public long startTime = currentTimeMillis();
 
-
     @BeforeClass
     public void beforeClass() {
+
         chromeDriver = new ChromeDriver();
     }
 
