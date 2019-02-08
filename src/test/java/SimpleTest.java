@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.*;
 
-//TODO What is the purpose of the current test class?
+//TODO What is the purpose of the current test class?--It is just my class for studying, it is not related to HW
 public class SimpleTest {
 
     @Test

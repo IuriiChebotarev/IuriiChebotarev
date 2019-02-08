@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
-// TODO Do you plan add every .iml file to this file when several files would be added?
-// TODO What about target folder? Do you plan include it to the repo?
-/IuriiChebotarev.iml
 /.idea/
 target
 *.iml
+/src/test/java/lesson1/
+/src/test/java/lesson2/
+/src/test/java/lesson3/
