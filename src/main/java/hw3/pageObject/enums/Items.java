@@ -2,6 +2,7 @@ package hw3.pageObject.enums;
 
 public enum Items {
 
+    // TODO Why you set into one value?
     ITEMS("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
 
     public String home;

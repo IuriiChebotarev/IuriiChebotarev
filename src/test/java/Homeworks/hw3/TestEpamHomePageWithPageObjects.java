@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import hw3.pageObject.HomePage;
 
+// TODO Java Code Convention style
 public class TestEpamHomePageWithPageObjects extends SeleniumBase {
 
     private WebDriver chromeDriver;
