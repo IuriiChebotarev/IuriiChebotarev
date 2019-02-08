@@ -6,12 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import static org.testng.Assert.assertEquals;
-
 // TODO Jave Code convention style
-public class TestTextsBelowPicturesWithDataProvider extends SeleniumBase {
+public class TextsBelowPicturesWithDataProvider extends SeleniumBase {
     private WebDriver chromeDriver;
 
-    // TODO Is it possible to use @BeforeMethod?
+    // TODO Is it possible to use @BeforeMethod?--No it is not possible. 4 browser windows will be opened but testing will be performed only in one
     @BeforeClass()
     public void beforeClass() {
         chromeDriver = new ChromeDriver();
@@ -33,9 +32,9 @@ public class TestTextsBelowPicturesWithDataProvider extends SeleniumBase {
         1. What does i mean?
         2. What does s mean?
      */
-    public void assertTexts(int i,String s) {
+    public void assertTexts(int textNumder,String text) {
         chromeDriver.navigate().to("https://epam.github.io/JDI/");
-        assertEquals(chromeDriver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(), s);
+        assertEquals(chromeDriver.findElements(By.cssSelector(".benefit-txt")).get(textNumder).getText(), text);
     }
 
     @AfterClass()
