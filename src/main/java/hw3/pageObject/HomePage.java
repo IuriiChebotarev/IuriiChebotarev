@@ -11,7 +11,8 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
+// TODO Remove unused imports
+// TODO Java Code Convention
 public class HomePage {
 
     @FindBy(css = "[id='user-icon']")
@@ -87,6 +88,7 @@ public class HomePage {
     }
 
     public void checkTitle(HomePageData title){
+        // TODO Is it required use .toString?
         assertEquals(chromeDriver.getTitle(), title.toString());
     }
 
@@ -106,6 +108,7 @@ public class HomePage {
     }
 
     public void checkItems(Items items) {
+        // TODO please make unique method
         assertTrue(homeItem.isDisplayed());
         assertEquals(homeItem.getText(), items.home);
         assertTrue(contactFormItem.isDisplayed());
@@ -116,6 +119,7 @@ public class HomePage {
         assertEquals(metalsAndcolorsItem.getText(), items.metalsAndColors);
     }
     public void checkImages (){
+        // TODO please make it for the one check
         assertTrue(iconPractise.isDisplayed());
         assertTrue(iconCustom.isDisplayed());
         assertTrue(iconMulti.isDisplayed());
@@ -141,7 +145,7 @@ public class HomePage {
     }
 
     public void switchToIframe(){
-        WebElement iFrame = iframe;
+        WebElement iFrame = iframe; // TODO ???
         chromeDriver.switchTo().frame(iFrame);
     }
 
@@ -152,15 +156,15 @@ public class HomePage {
     public void switchToDefaultPage(){
         chromeDriver.switchTo().defaultContent();
     }
-
+    // TODO methods name
     public void checkTextinSubHeader(TextsOfHeaders textsOfHeaders) {
-        WebElement subHeader = subHeaderLink;
+        WebElement subHeader = subHeaderLink; // TODO ???
         assertTrue(subHeader.isDisplayed());
         assertEquals(subHeader.getText(), textsOfHeaders.thirdText);
     }
 
     public void checkJdiGithubIsALinkWithProperUrl(JdiUrl url) {
-        WebElement jdiGithub = subHeaderLink;
+        WebElement jdiGithub = subHeaderLink;// TODO ???
         assertEquals(jdiGithub.getAttribute("ui"), "link");
         assertEquals(jdiGithub.getAttribute("href"), url.url);
     }

@@ -7,9 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import static org.testng.Assert.assertEquals;
 
+// TODO Jave Code convention style
 public class TestTextsBelowPicturesWithDataProvider extends SeleniumBase {
     private WebDriver chromeDriver;
 
+    // TODO Is it possible to use @BeforeMethod?
     @BeforeClass()
     public void beforeClass() {
         chromeDriver = new ChromeDriver();
@@ -27,6 +29,10 @@ public class TestTextsBelowPicturesWithDataProvider extends SeleniumBase {
     }
 
     @Test (dataProvider="dataProvider")
+    /* TODO
+        1. What does i mean?
+        2. What does s mean?
+     */
     public void assertTexts(int i,String s) {
         chromeDriver.navigate().to("https://epam.github.io/JDI/");
         assertEquals(chromeDriver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(), s);

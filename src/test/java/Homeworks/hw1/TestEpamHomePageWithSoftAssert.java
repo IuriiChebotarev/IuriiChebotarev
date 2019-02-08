@@ -102,6 +102,10 @@ public class TestEpamHomePageWithSoftAssert extends SeleniumBase {
 
         //16 Assert that there is Footer
         softAssert.assertTrue(chromeDriver.findElement(By.cssSelector(".footer-content.overflow")).isDisplayed());
+
+        // TODO How you verify that your test is passed?
+        // TODO What is the main aim of the softAssertions?
+        // TODO Missing assertion. Which one assertion you've missed? (this assertion not correlated with actions in tests)
     }
         //17 Close Browser
 
