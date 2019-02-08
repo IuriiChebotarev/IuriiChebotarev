@@ -51,7 +51,7 @@ public class TestEpamHomePage extends SeleniumBase {
             * What do you expect from execution element.isDisplayed()?--?
          */
         WebElement homePage= chromeDriver.findElement(By.cssSelector("[href='index.html']"));
-        homePage.isDisplayed();
+        assertTrue(homePage.isDisplayed());
         assertEquals(homePage.getText(), "HOME");
         WebElement contactForm=chromeDriver.findElement(By.cssSelector("[href='contacts.html']"));
         contactForm.isDisplayed();
