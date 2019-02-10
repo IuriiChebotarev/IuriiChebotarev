@@ -2,18 +2,21 @@ package hw3.pageObject.enums;
 
 public enum TextsBelowImages {
     // TODO Why you set into one value?
-    TEXTS("To include good practices\nand ideas from successful\nEPAM project","To be flexible and\ncustomizable", "To be multiplatform", "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
+    FIRST_ICON_TEXT("To include good practices\nand ideas from successful\nEPAM project"),
+    SECOND_ICON_TEXT("To be flexible and\ncustomizable"),
+    THIRD_ICON_TEXT("To be multiplatform"),
+    FOURTH_ICON_TEXT("Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
 
-    public String firstText;
-    public String secondText;
-    public String thirdText;
-    public String fourthText;
+    public final String ImagesText;
 
-    TextsBelowImages(String firstText, String secondText, String thirdText, String fourthText) {
-        this.firstText = firstText;
-        this.secondText = secondText;
-        this.thirdText = thirdText;
-        this.fourthText = fourthText;
+    TextsBelowImages(String ImagesText) {
+
+        this.ImagesText = ImagesText;
+    }
+
+    @Override
+    public String toString() {
+        return ImagesText;
     }
 }
 

@@ -10,9 +10,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import hw3.pageObject.HomePage;
+import java.util.ArrayList;
+import java.util.List;
 
 // TODO Java Code Convention style
-public class TestEpamHomePageWithPageObjects extends SeleniumBase {
+public class EpamHomePageWithPageObjects extends SeleniumBase {
 
     private WebDriver chromeDriver;
     private HomePage homePage;
@@ -36,10 +38,10 @@ public class TestEpamHomePageWithPageObjects extends SeleniumBase {
     public void  testEpamHomePageWithPageObjects() {
 
         //1 Open test site by URL
-        homePage.open(HomePageData.INDEX_HTML_URL);
+        homePage.open();
 
         //2 Assert Browser title
-        homePage.checkTitle(HomePageData.HOME_PAGE_TITLE);
+        homePage.checkTitle();
 
         //3 Perform login
         homePage.login(Users.PETER);
@@ -51,19 +53,30 @@ public class TestEpamHomePageWithPageObjects extends SeleniumBase {
         homePage.checkUserName(Users.PETER);
 
         //5 Assert Browser title
-        homePage.checkTitle(HomePageData.HOME_PAGE_TITLE);
+        homePage.checkTitle();
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
-        homePage.checkItems(Items.ITEMS);
+        List<String> itemsWithTexts = new ArrayList<String>();
+        itemsWithTexts.add(ItemsWithTexts.HOME.ItemText);
+        itemsWithTexts.add(ItemsWithTexts.CONTACT_FORM.ItemText);
+        itemsWithTexts.add(ItemsWithTexts.SERVICE.ItemText);
+        itemsWithTexts.add(ItemsWithTexts.METALS_COLORS.ItemText);
+
+        homePage.checkItems(itemsWithTexts);
 
         //7 Assert that there are 4 images on the Index Page and they are displayed
         homePage.checkImages();
 
         //8 Assert that there are 4 texts on the Index Page under icons and they have proper text
-        homePage.checkTextsBelowImages(TextsBelowImages.TEXTS);
+        List<String> imagesTexts = new ArrayList<String>();
+        imagesTexts.add(TextsBelowImages.FIRST_ICON_TEXT.ImagesText);
+        imagesTexts.add(TextsBelowImages.SECOND_ICON_TEXT.ImagesText);
+        imagesTexts.add(TextsBelowImages.THIRD_ICON_TEXT.ImagesText);
+        imagesTexts.add(TextsBelowImages.FOURTH_ICON_TEXT.ImagesText);
 
         //9 Assert a text of the main headers
-        homePage.checkTextsOfTheMainHeader(TextsOfHeaders.TEXTS_OF_HEADERS);
+        homePage.checkMainHeaderTitle();
+        homePage.checkMainHeaderText();
 
         //10 Assert that there is the iframe in the center of page
         homePage.checkIframe();
@@ -76,10 +89,10 @@ public class TestEpamHomePageWithPageObjects extends SeleniumBase {
         homePage.switchToDefaultPage();
 
         //13 Assert a text of the sub header
-        homePage.checkTextinSubHeader(TextsOfHeaders.TEXTS_OF_HEADERS);
+        homePage.checkTextinSubHeader(TextsOfHeaders.SUB_HEADER_TEXT);
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        homePage.checkJdiGithubIsALinkWithProperUrl(JdiUrl.JDI_URL);
+        homePage.checkJdiGithubIsALinkWithProperUrl();
 
         //15 Assert that there is Left Section
         homePage.checkLeftSection();
