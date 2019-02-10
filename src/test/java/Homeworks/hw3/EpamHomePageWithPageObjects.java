@@ -89,10 +89,10 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
         homePage.switchToDefaultPage();
 
         //13 Assert a text of the sub header
-        homePage.checkTextinSubHeader(TextsOfHeaders.SUB_HEADER_TEXT);
+        homePage.checkSubHeaderText(TextsOfHeaders.SUB_HEADER_TEXT);
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        homePage.checkJdiGithubIsALinkWithProperUrl();
+        homePage.checkJdiUrl();
 
         //15 Assert that there is Left Section
         homePage.checkLeftSection();

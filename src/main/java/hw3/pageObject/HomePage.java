@@ -137,13 +137,13 @@ public class HomePage {
         chromeDriver.switchTo().defaultContent();
     }
     // TODO methods name
-    public void checkTextinSubHeader(TextsOfHeaders textsOfHeaders) {
+    public void checkSubHeaderText(TextsOfHeaders textsOfHeaders) {
          // TODO ???
         assertTrue(link.isDisplayed());
         assertEquals(link.getText(), textsOfHeaders.toString());
     }
 
-    public void checkJdiGithubIsALinkWithProperUrl() {
+    public void checkJdiUrl() {
         // TODO ???
         assertEquals(link.getAttribute("href"), HomePageData.HOME_PAGE_DATA.jdiUrl);
     }
