@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+// TODO Same as in AllRegressionAndSmokeTestsSimultaneously
 public class TwoRegressionTestsAndOneSmokeTest extends SeleniumBase {
 
     private ThreadLocal<WebDriver> chromeDriver = new ThreadLocal<WebDriver>() {
@@ -36,7 +37,6 @@ public class TwoRegressionTestsAndOneSmokeTest extends SeleniumBase {
 
         @Test(groups = {"regression"})
     public void twoRegressionTestsAndOneSmokeTestCopyOne() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 
@@ -122,7 +122,6 @@ public class TwoRegressionTestsAndOneSmokeTest extends SeleniumBase {
 
     @Test(groups = {"regression"})
     public void twoRegressionTestsAndOneSmokeTestCopyTwo() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 
@@ -208,7 +207,6 @@ public class TwoRegressionTestsAndOneSmokeTest extends SeleniumBase {
 
     @Test(groups = {"smoke"})
     public void twoRegressionTestsAndOneSmokeTestCopyThree() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 

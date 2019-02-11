@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-// TODO Remove unused imports// TODO Java Code Convention
+
 public class HomePage {
 
     @FindBy(css = "[id='user-icon']")
@@ -69,12 +69,11 @@ public class HomePage {
         this.chromeDriver = driver;
     }
     public void open(){
-
+        // TODO extra empty line
         chromeDriver.navigate().to(HomePageData.HOME_PAGE_DATA.url);
     }
 
     public void checkTitle(){
-        // TODO Is it required use .toString?
         assertEquals(chromeDriver.getTitle(), HomePageData.HOME_PAGE_DATA.title);
     }
 
@@ -94,7 +93,7 @@ public class HomePage {
     }
 
     public void checkItems(List<String> Items) {
-        // TODO please make unique method
+        // TODO What is purpose of searching here elements???
         List<WebElement> navigationBar = chromeDriver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (int i = 0; i < navigationBar.size(); i ++) {
@@ -103,6 +102,7 @@ public class HomePage {
     }
 
     public void checkImages() {
+        // TODO What is purpose of searching here elements???
         List<WebElement> benefitIcons = chromeDriver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -110,13 +110,14 @@ public class HomePage {
         }
     }
 
+    // TODO I suppose this method could be parametrized
     public void checkMainHeaderTitle() {
-
+        // TODO extra empty line
         assertEquals(mainTitle.getText(), TextsOfHeaders.MAIN_HEADER_TITLE.toString());
     }
 
     public void checkMainHeaderText() {
-
+        // TODO extra empty line
         assertEquals(textCenter.getText(), TextsOfHeaders.MAIN_HEADER_TEXT.toString());
     }
 
@@ -125,7 +126,6 @@ public class HomePage {
     }
 
     public void switchToIframe(){
-        //TODO ???
         chromeDriver.switchTo().frame(iframe);
     }
 
@@ -136,15 +136,13 @@ public class HomePage {
     public void switchToDefaultPage(){
         chromeDriver.switchTo().defaultContent();
     }
-    // TODO methods name
+    // TODO missing empty line
     public void checkSubHeaderText(TextsOfHeaders textsOfHeaders) {
-         // TODO ???
         assertTrue(link.isDisplayed());
         assertEquals(link.getText(), textsOfHeaders.toString());
     }
 
     public void checkJdiUrl() {
-        // TODO ???
         assertEquals(link.getAttribute("href"), HomePageData.HOME_PAGE_DATA.jdiUrl);
     }
 

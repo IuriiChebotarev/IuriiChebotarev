@@ -13,6 +13,9 @@ import static org.testng.Assert.assertTrue;
 
 public class AllRegressionAndSmokeTestsSimultaneously extends SeleniumBase {
 
+    // TODO Why you decide create in this way?
+    // TODO How much drivers will be created here?
+    // TODO chromeDriver is not good name here
     private ThreadLocal<WebDriver> chromeDriver = new ThreadLocal<WebDriver>() {
 
         @Override
@@ -29,12 +32,12 @@ public class AllRegressionAndSmokeTestsSimultaneously extends SeleniumBase {
 
     @BeforeMethod()
     public void beforeMethod() {
+        // TODO It will be better create instance of the Chrome here and add it to ThreadLocal
         getDriver().manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
     }
 
     @Test(groups={"smoke","regression"})
     public void allRegressionAndSmokeTestsSimultaneouslyCopyOne() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 
@@ -115,12 +118,12 @@ public class AllRegressionAndSmokeTestsSimultaneously extends SeleniumBase {
         assertTrue(getDriver().findElement(By.cssSelector(".footer-content.overflow")).isDisplayed());
 
         //17 Close Browser
+        // TODO Why you close it here?
         getDriver().close();
     }
 
     @Test(groups={"smoke","regression"})
     public void allRegressionAndSmokeTestsSimultaneouslyCopyTwo() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 
@@ -201,12 +204,12 @@ public class AllRegressionAndSmokeTestsSimultaneously extends SeleniumBase {
         assertTrue(getDriver().findElement(By.cssSelector(".footer-content.overflow")).isDisplayed());
 
         //17 Close Browser
+        // TODO Why you close it here?
         getDriver().close();
     }
 
     @Test(groups={"smoke","regression"})
     public void allRegressionAndSmokeTestsSimultaneouslyCopyThree() {
-        // TODO Please avoid code duplication
         //1 Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/");
 
@@ -287,6 +290,7 @@ public class AllRegressionAndSmokeTestsSimultaneously extends SeleniumBase {
         assertTrue(getDriver().findElement(By.cssSelector(".footer-content.overflow")).isDisplayed());
 
         //17 Close Browser
+        // TODO Why you close it here?
         getDriver().close();
     }
 }
