@@ -45,6 +45,7 @@ public class ServicePageInterface extends SelenideBase {
         homePage.checkUsername(PETER);
 
         //5.Click on "Service" subcategory in the header and check that drop down contains options
+        // TODO Is it possible get current list from the enum?
         List<String> serviceDropdownInHeader = new ArrayList<>();
         serviceDropdownInHeader.add(SUPPORT.text);
         serviceDropdownInHeader.add(DATES.text);
@@ -56,6 +57,7 @@ public class ServicePageInterface extends SelenideBase {
         homePage.checkServiceDropdownListInHeader(serviceDropdownInHeader);
 
         //6.Click on Service subcategory in the left section and check that drop down contains options
+        // TODO Is it possible get current list from the enum?
         List<String> serviceDropdownInLeftMenu = new ArrayList<>();
         serviceDropdownInLeftMenu.add(SUPPORT.text);
         serviceDropdownInLeftMenu.add(DATES.text);
@@ -79,6 +81,7 @@ public class ServicePageInterface extends SelenideBase {
         elementsPage.checkLeftSection();
 
         //11.Select checkboxes
+        // TODO This method should be parametrized
         elementsPage.clickOnWaterCheckbox();
         elementsPage.checkCheckboxesLogs(WATER, true);
         elementsPage.clickOnWindCheckbox();

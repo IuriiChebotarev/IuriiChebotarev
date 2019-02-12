@@ -81,11 +81,13 @@ public class HomePage {
         }
     }
 
+    // TODO This method should be parametrized
     public void openDifferentElementsPage() {
         serviceDropdownInHeader.click();
         elementsPageItem.click();
     }
 
+    // TODO This method should be parametrized
     public void openDatesPage() {
         serviceDropdownInHeader.click();
         datesPageItem.click();
