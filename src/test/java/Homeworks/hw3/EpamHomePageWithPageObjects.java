@@ -28,15 +28,16 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
     public void beforeMethod() {
         chromeDriver.manage().window().maximize();
     }
+    // TODO Missing empty line
     @AfterMethod(alwaysRun = true)
     public void afterMethod(){
-
+        // TODO extra empty line
         //17 Close Browser
         homePage.closeBrowser();
     }
     @Test
     public void  testEpamHomePageWithPageObjects() {
-
+        // TODO extra empty line
         //1 Open test site by URL
         homePage.open();
 
@@ -56,6 +57,7 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
         homePage.checkTitle();
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
+        // TODO Is it possible get this list of values from the enum?
         List<String> itemsWithTexts = new ArrayList<String>();
         itemsWithTexts.add(ItemsWithTexts.HOME.ItemText);
         itemsWithTexts.add(ItemsWithTexts.CONTACT_FORM.ItemText);

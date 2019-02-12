@@ -12,12 +12,14 @@ import static org.testng.Assert.assertTrue;
 
 public class TestEpamHomePageWithAnnotations extends SeleniumBase {
 
+    // TODO Why it is public?
     public WebDriver chromeDriver;
+    // TODO Why it is public?
     public long startTime = currentTimeMillis();
 
     @BeforeClass
     public void beforeClass() {
-
+        // TODO extra space line
         chromeDriver = new ChromeDriver();
     }
 

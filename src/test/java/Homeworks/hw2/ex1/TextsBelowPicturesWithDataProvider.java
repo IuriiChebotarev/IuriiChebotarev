@@ -11,6 +11,7 @@ public class TextsBelowPicturesWithDataProvider extends SeleniumBase {
     private WebDriver chromeDriver;
 
     // TODO Is it possible to use @BeforeMethod?--No it is not possible. 4 browser windows will be opened but testing will be performed only in one
+    // TODO Ok. 4 browser windows. How to make test run in all browsers in parallel mode?
     @BeforeClass()
     public void beforeClass() {
         chromeDriver = new ChromeDriver();
@@ -28,10 +29,8 @@ public class TextsBelowPicturesWithDataProvider extends SeleniumBase {
     }
 
     @Test (dataProvider="dataProvider")
-    /* TODO
-        1. What does i mean?
-        2. What does s mean?
-     */
+    // TODO textNumder - I guess should be textNumber
+    // TODO int textNumder,String text - missing space
     public void assertTexts(int textNumder,String text) {
         chromeDriver.navigate().to("https://epam.github.io/JDI/");
         assertEquals(chromeDriver.findElements(By.cssSelector(".benefit-txt")).get(textNumder).getText(), text);
