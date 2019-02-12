@@ -12,14 +12,17 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.14.3</version>
-
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
 <build>
     <plugins>
@@ -33,7 +36,15 @@
         </suiteXmlFiles>
     </configuration>
 </plugin>
-</plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>7</source>
+                <target>7</target>
+            </configuration>
+        </plugin>
+    </plugins>
 </build>
 
 
