@@ -10,12 +10,13 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import hw3.pageObject.HomePage;
-import java.util.ArrayList;
-import java.util.List;
+import static hw3.pageObject.enums.ItemsWithTexts.*;
+import static hw3.pageObject.enums.JdiLink.JDI_LINK;
+import static hw3.pageObject.enums.TextsBelowImages.*;
+import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
+import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
 
-// TODO Java Code Convention style
 public class EpamHomePageWithPageObjects extends SeleniumBase {
-
     private WebDriver chromeDriver;
     private HomePage homePage;
 
@@ -24,20 +25,23 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
         chromeDriver = new ChromeDriver();
         homePage = PageFactory.initElements(chromeDriver, HomePage.class);
     }
+
     @BeforeMethod
     public void beforeMethod() {
+
         chromeDriver.manage().window().maximize();
     }
-    // TODO Missing empty line
+    // TODO Missing empty line--FIXED
     @AfterMethod(alwaysRun = true)
     public void afterMethod(){
-        // TODO extra empty line
+
         //17 Close Browser
         homePage.closeBrowser();
     }
+
     @Test
     public void  testEpamHomePageWithPageObjects() {
-        // TODO extra empty line
+
         //1 Open test site by URL
         homePage.open();
 
@@ -57,28 +61,18 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
         homePage.checkTitle();
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO Is it possible get this list of values from the enum?
-        List<String> itemsWithTexts = new ArrayList<String>();
-        itemsWithTexts.add(ItemsWithTexts.HOME.ItemText);
-        itemsWithTexts.add(ItemsWithTexts.CONTACT_FORM.ItemText);
-        itemsWithTexts.add(ItemsWithTexts.SERVICE.ItemText);
-        itemsWithTexts.add(ItemsWithTexts.METALS_COLORS.ItemText);
-
-        homePage.checkItems(itemsWithTexts);
+        // TODO Is it possible get this list of values from the enum?--FIXED
+        homePage.checkItems(getHeaderItemsList());
 
         //7 Assert that there are 4 images on the Index Page and they are displayed
         homePage.checkImages();
 
         //8 Assert that there are 4 texts on the Index Page under icons and they have proper text
-        List<String> imagesTexts = new ArrayList<String>();
-        imagesTexts.add(TextsBelowImages.FIRST_ICON_TEXT.ImagesText);
-        imagesTexts.add(TextsBelowImages.SECOND_ICON_TEXT.ImagesText);
-        imagesTexts.add(TextsBelowImages.THIRD_ICON_TEXT.ImagesText);
-        imagesTexts.add(TextsBelowImages.FOURTH_ICON_TEXT.ImagesText);
+        homePage.checkBenefitTexts(getTextsBelowImages());
 
         //9 Assert a text of the main headers
-        homePage.checkMainHeaderTitle();
-        homePage.checkMainHeaderText();
+        homePage.checkMainHeaderTitle(MAIN_HEADER_TITLE);
+        homePage.checkMainHeaderText(MAIN_HEADER_TEXT);
 
         //10 Assert that there is the iframe in the center of page
         homePage.checkIframe();
@@ -94,7 +88,7 @@ public class EpamHomePageWithPageObjects extends SeleniumBase {
         homePage.checkSubHeaderText(TextsOfHeaders.SUB_HEADER_TEXT);
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        homePage.checkJdiUrl();
+        homePage.checkJdiUrl(JDI_LINK);
 
         //15 Assert that there is Left Section
         homePage.checkLeftSection();

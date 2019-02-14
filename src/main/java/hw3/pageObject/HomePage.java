@@ -1,7 +1,6 @@
 package hw3.pageObject;
 
 import hw3.pageObject.enums.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,20 +25,11 @@ public class HomePage {
     @FindBy(css = "[id='user-name']")
     private WebElement userName;
 
-    @FindBy(css = ".uui-navigation.nav.navbar-nav.m-l8 > li")
-    private WebElement items;
+    @FindBy(css = ".benefit-icon")
+    private List<WebElement> benefitIcons;
 
-    @FindBy(css = "[class='icons-benefit icon-practise']")
-    private WebElement iconPractise;
-
-    @FindBy(css = "[class='icons-benefit icon-custom']")
-    private WebElement iconCustom;
-
-    @FindBy(css = "[class='icons-benefit icon-multi']")
-    private WebElement iconMulti;
-
-    @FindBy(css = "[class='icons-benefit icon-base']")
-    private WebElement iconBase;
+    @FindBy(css = ".benefit-txt")
+    private List<WebElement> benefitTxt;
 
     @FindBy(css = ".main-title.text-center")
     private WebElement mainTitle;
@@ -62,6 +52,9 @@ public class HomePage {
     @FindBy(css = ".footer-content.overflow")
     private WebElement footer;
 
+    @FindBy(css = ".uui-navigation.nav.navbar-nav.m-l8 > li")
+    private List<WebElement> navigationBar;
+
     private WebDriver chromeDriver;
 
     public HomePage(WebDriver driver) {
@@ -69,7 +62,6 @@ public class HomePage {
         this.chromeDriver = driver;
     }
     public void open(){
-        // TODO extra empty line
         chromeDriver.navigate().to(HomePageData.HOME_PAGE_DATA.url);
     }
 
@@ -93,32 +85,32 @@ public class HomePage {
     }
 
     public void checkItems(List<String> Items) {
-        // TODO What is purpose of searching here elements???
-        List<WebElement> navigationBar = chromeDriver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
-
+        // TODO What is purpose of searching here elements???--FIXED
         for (int i = 0; i < navigationBar.size(); i ++) {
             assertEquals(navigationBar.get(i).getText(), Items.get(i));
         }
     }
 
     public void checkImages() {
-        // TODO What is purpose of searching here elements???
-        List<WebElement> benefitIcons = chromeDriver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
-
+        // TODO What is purpose of searching here elements???--FIXED
         for (WebElement benefitIcon : benefitIcons) {
             assertTrue(benefitIcon.isDisplayed());
         }
     }
 
-    // TODO I suppose this method could be parametrized
-    public void checkMainHeaderTitle() {
-        // TODO extra empty line
-        assertEquals(mainTitle.getText(), TextsOfHeaders.MAIN_HEADER_TITLE.toString());
+    public void checkBenefitTexts(List<String> benefitTexts) {
+        for (int i = 0; i < benefitTxt.size(); i ++) {
+            assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
+        }
     }
 
-    public void checkMainHeaderText() {
-        // TODO extra empty line
-        assertEquals(textCenter.getText(), TextsOfHeaders.MAIN_HEADER_TEXT.toString());
+    // TODO I suppose this method could be parametrized--FIXED
+    public void checkMainHeaderTitle(TextsOfHeaders textsOfHeaders) {
+        assertEquals(mainTitle.getText(), textsOfHeaders.toString());
+    }
+
+    public void checkMainHeaderText(TextsOfHeaders textsOfHeaders) {
+        assertEquals(textCenter.getText(), textsOfHeaders.toString());
     }
 
     public void checkIframe() {
@@ -142,8 +134,8 @@ public class HomePage {
         assertEquals(link.getText(), textsOfHeaders.toString());
     }
 
-    public void checkJdiUrl() {
-        assertEquals(link.getAttribute("href"), HomePageData.HOME_PAGE_DATA.jdiUrl);
+    public void checkJdiUrl(JdiLink JdiLink) {
+        assertEquals(link.getAttribute("href"), JdiLink.jdiLink);
     }
 
     public void checkLeftSection() {

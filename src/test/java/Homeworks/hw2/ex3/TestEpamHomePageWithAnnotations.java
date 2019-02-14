@@ -12,24 +12,25 @@ import static org.testng.Assert.assertTrue;
 
 public class TestEpamHomePageWithAnnotations extends SeleniumBase {
 
-    // TODO Why it is public?
-    public WebDriver chromeDriver;
-    // TODO Why it is public?
-    public long startTime = currentTimeMillis();
+    // TODO Why it is public?--FIXED
+    private WebDriver chromeDriver;
+    // TODO Why it is public?--FIXED
+    private long startTime = currentTimeMillis();
 
     @BeforeClass
     public void beforeClass() {
-        // TODO extra space line
         chromeDriver = new ChromeDriver();
     }
 
     @BeforeMethod
     public void beforeMethod() {
+
         chromeDriver.manage().window().maximize();
     }
 
     @AfterMethod
     public void afterMethod() {
+
         System.out.println(chromeDriver.getTitle());
     }
 
@@ -41,12 +42,14 @@ public class TestEpamHomePageWithAnnotations extends SeleniumBase {
 
     @AfterSuite
     public void afterSuite() {
+
         System.out.println("Time of testing was: " + (currentTimeMillis() - startTime));
     }
 
 
     @Test
     public void testEpamHomePageWithAnnotations() {
+
         //1 Open test site by URL
         chromeDriver.navigate().to("https://epam.github.io/JDI/");
 
@@ -121,8 +124,10 @@ public class TestEpamHomePageWithAnnotations extends SeleniumBase {
         WebElement JdiGithub=chromeDriver.findElement(By.cssSelector("a[href='https://github.com/epam/JDI']"));
         assertEquals(JdiGithub.getAttribute("ui"), "link");
         assertEquals(JdiGithub.getAttribute("href"), "https://github.com/epam/JDI");
+
         //15 Assert that there is Left Section
         assertTrue(chromeDriver.findElement(By.cssSelector("#mCSB_1")).isDisplayed());
+
         //16 Assert that there is Footer
         assertTrue(chromeDriver.findElement(By.cssSelector(".footer-content.overflow")).isDisplayed());
     }

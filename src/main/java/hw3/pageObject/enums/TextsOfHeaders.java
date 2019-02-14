@@ -18,4 +18,4 @@ public enum TextsOfHeaders {
     public String toString() {
         return value;
     }
-    }
+}
