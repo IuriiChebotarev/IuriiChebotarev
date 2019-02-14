@@ -39,6 +39,7 @@ public class DatesPageSliders extends SelenideBase {
         homePage.checkUsername(PETER);
 
         //5.Open through the header menu Service -> Dates Page
+        // TODO This method should be parametrized
         homePage.openDatesPage();
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position

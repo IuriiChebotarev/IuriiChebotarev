@@ -24,11 +24,13 @@ public class DatesPage{
     private Actions actions = new Actions(getWebDriver());
 
     public void moveLeftSlider(Integer value) {
+        // TODO Please try avoid code duplication
         actions.clickAndHold(leftSlider).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }
 
     public void moveRightSlider(Integer value) {
+        // TODO Please try avoid code duplication
         actions.clickAndHold(rightSlider).moveToElement(sliderLine, ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }

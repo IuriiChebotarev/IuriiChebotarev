@@ -58,10 +58,12 @@ public class ElementsPage {
         leftSection.isDisplayed();
     }
 
+    // TODO This method should be parametrized
     public void clickOnWaterCheckbox() {
         waterCheckbox.click();
     }
 
+    // TODO This method should be parametrized
     public void clickOnWindCheckbox() {
         windCheckbox.click();
     }
@@ -78,6 +80,7 @@ public class ElementsPage {
         logsPanel.shouldHave(Condition.text("metal: value changed to " + radioButton));
     }
 
+    // TODO This method should be parametrized
     public void selectYellowInDropdown() {
         colorsDropdown.click();
         colorsDropdown.selectOption("Yellow");
