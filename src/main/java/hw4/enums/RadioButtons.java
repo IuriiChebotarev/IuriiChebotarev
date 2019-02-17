@@ -2,14 +2,16 @@ package hw4.enums;
 
 public enum  RadioButtons {
 
-    GOLD("Gold"),
-    SILVER("Silver"),
-    BRONZE("BRONZE"),
-    SELEN("Selen");
+    GOLD(0, "Gold"),
+    SILVER(1, "Silver"),
+    BRONZE(2, "BRONZE"),
+    SELEN(3, "Selen");
 
-    public String value;
+    public int index;
+    public String label;
 
-    RadioButtons(String value) {
-        this.value = value;
+    RadioButtons(int index, String label) {
+        this.index = index;
+        this.label = label;
     }
 }

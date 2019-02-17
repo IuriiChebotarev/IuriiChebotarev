@@ -1,17 +1,33 @@
 package hw4.enums;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum ServiceDropDown {
 
-    SUPPORT("Support"),
-    DATES("Dates"),
-    COMPLEX_TABLE("Complex Table"),
-    SIMPLE_TABLE("Simple Table"),
-    TABLES_WITH_PAGE("Tables With Pages"),
-    DIFFERENT_ELEMENTS("Different Elements");
+    SUPPORT(0, "Support"),
+    DATES(1, "Dates"),
+    COMPLEX_TABLE(2,"Complex Table"),
+    SIMPLE_TABLE(3,"Simple Table"),
+    USER_TABLE(4,"User Table"),
+    TABLES_WITH_PAGE(5,"Tables With Pages"),
+    DIFFERENT_ELEMENTS(6,"Different Elements"),
+    PERFORMANCE(7,"Performance");
 
-    public String text;
+    public int index;
+    public String label;
 
-    ServiceDropDown(String text) {
-        this.text = text;
+    ServiceDropDown(int index, String text) {
+        this.index = index;
+        this.label = text;
+    }
+
+    public static List<String> getServiceDropDownHeaders() {
+        List<String> listOfServiceDropDownHeaders = new ArrayList<>();
+
+        for (ServiceDropDown serviceDropDown : ServiceDropDown.values()) {
+            listOfServiceDropDownHeaders.add(serviceDropDown.label);
+        }
+        return listOfServiceDropDownHeaders;
     }
 }

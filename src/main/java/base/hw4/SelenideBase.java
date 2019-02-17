@@ -8,9 +8,7 @@ public abstract class SelenideBase {
 
     @BeforeSuite
     public void beforeSuite() {
-        // TODO Why you set this property?
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        Configuration.browser = Browsers.CHROME;
+        // TODO Why you set this property?--FIXED
         Configuration.startMaximized = true;
     }
 }

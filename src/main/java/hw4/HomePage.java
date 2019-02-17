@@ -1,5 +1,6 @@
 package hw4;
 
+import base.hw4.BasePage;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import hw4.enums.HomePageData;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import static com.codeborne.selenide.Condition.*;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
     @FindBy(css = "#user-icon")
     private SelenideElement userIcon;
@@ -64,32 +65,5 @@ public class HomePage {
     public void checkUsername(Users users) {
         userName.shouldHave(text(users.username));
     }
-
-    public void checkServiceDropdownListInHeader(List<String> serviceDropdownItems) {
-        serviceDropdownInHeader.click();
-
-        for (int i = 0; i < serviceDropdownItemsInHeader.size(); i++) {
-            serviceDropdownItemsInHeader.get(i).shouldHave(text(serviceDropdownItems.get(i)));
-        }
-    }
-
-    public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdownItems) {
-        serviceDropdownInLeftMenu.click();
-
-        for (int i = 0; i < serviceDropdownItemsInLeftMenu.size(); i++) {
-            serviceDropdownItemsInLeftMenu.get(i).shouldHave(text(serviceDropdownItems.get(i)));
-        }
-    }
-
-    // TODO This method should be parametrized
-    public void openDifferentElementsPage() {
-        serviceDropdownInHeader.click();
-        elementsPageItem.click();
-    }
-
-    // TODO This method should be parametrized
-    public void openDatesPage() {
-        serviceDropdownInHeader.click();
-        datesPageItem.click();
-    }
 }
+

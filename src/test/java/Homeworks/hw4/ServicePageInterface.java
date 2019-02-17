@@ -1,17 +1,19 @@
 package Homeworks.hw4;
 
 import base.hw4.SelenideBase;
+import hw4.DatesPage;
 import hw4.ElementsPage;
 import hw4.HomePage;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import java.util.ArrayList;
-import java.util.List;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 import static hw4.enums.Checkboxes.WATER;
 import static hw4.enums.Checkboxes.WIND;
 import static hw4.enums.Colors.YELLOW;
 import static hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static hw4.enums.LogsMessages.CHECKBOX_LOG;
+import static hw4.enums.LogsMessages.RADIOBUTTON_LOG;
 import static hw4.enums.RadioButtons.SELEN;
 import static hw4.enums.ServiceDropDown.*;
 import static hw4.enums.Users.PETER;
@@ -23,14 +25,16 @@ public class ServicePageInterface extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        homePage = new HomePage();
-        elementsPage = new ElementsPage();
 
         //1.Open test site by URL
-        homePage.open(HOME_PAGE_DATA);
+        open(HOME_PAGE_DATA.url);
+        homePage = page(HomePage.class);
+        elementsPage=page(ElementsPage.class);
+    }
 
-        page(homePage);
-        page(elementsPage);
+    @AfterMethod
+    public void afterMethod() {
+        close();
     }
 
     @Test
@@ -45,31 +49,19 @@ public class ServicePageInterface extends SelenideBase {
         homePage.checkUsername(PETER);
 
         //5.Click on "Service" subcategory in the header and check that drop down contains options
-        // TODO Is it possible get current list from the enum?
-        List<String> serviceDropdownInHeader = new ArrayList<>();
-        serviceDropdownInHeader.add(SUPPORT.text);
-        serviceDropdownInHeader.add(DATES.text);
-        serviceDropdownInHeader.add(COMPLEX_TABLE.text);
-        serviceDropdownInHeader.add(SIMPLE_TABLE.text);
-        serviceDropdownInHeader.add(TABLES_WITH_PAGE.text);
-        serviceDropdownInHeader.add(DIFFERENT_ELEMENTS.text);
+        // TODO Is it possible get current list from the enum?--FIXED
 
-        homePage.checkServiceDropdownListInHeader(serviceDropdownInHeader);
+        homePage.clickOnServiceDropdownInHeader();
+        homePage.checkServiceDropdownListInHeader(getServiceDropDownHeaders());
 
         //6.Click on Service subcategory in the left section and check that drop down contains options
-        // TODO Is it possible get current list from the enum?
-        List<String> serviceDropdownInLeftMenu = new ArrayList<>();
-        serviceDropdownInLeftMenu.add(SUPPORT.text);
-        serviceDropdownInLeftMenu.add(DATES.text);
-        serviceDropdownInLeftMenu.add(COMPLEX_TABLE.text);
-        serviceDropdownInLeftMenu.add(SIMPLE_TABLE.text);
-        serviceDropdownInLeftMenu.add(TABLES_WITH_PAGE.text);
-        serviceDropdownInLeftMenu.add(DIFFERENT_ELEMENTS.text);
-
-        homePage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
+        // TODO Is it possible get current list from the enum?--FIXED
+        homePage.clickOnServiceDropdownInLeftMenu();
+        homePage.checkServiceDropdownListInLeftMenu(getServiceDropDownHeaders());
 
         //7.Open through the header menu Service -> Different Elements Page
-        homePage.openDifferentElementsPage();
+        homePage.clickOnServiceDropdownInHeader();
+        homePage.selectPageInServiceDropdown(DIFFERENT_ELEMENTS);
 
         //8.Check interface on Different elements page, it contains all needed elements
         elementsPage.checkDifferentPageElements();
@@ -81,32 +73,33 @@ public class ServicePageInterface extends SelenideBase {
         elementsPage.checkLeftSection();
 
         //11.Select checkboxes
-        // TODO This method should be parametrized
-        elementsPage.clickOnWaterCheckbox();
-        elementsPage.checkCheckboxesLogs(WATER, true);
-        elementsPage.clickOnWindCheckbox();
+        // TODO This method should be parametrized--FIXED
+        elementsPage.clickOnCheckbox(WATER);
+        elementsPage.clickOnCheckbox(WIND);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        elementsPage.checkCheckboxesLogs(WIND, true);
+        elementsPage.checkCheckboxesLogs(WATER, true,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WIND, true,CHECKBOX_LOG);
+
 
         //13.Select radio
-        elementsPage.selectSelenRadio();
+        elementsPage.selectRadioButton(SELEN);
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
-        elementsPage.checkRadiosLogs(SELEN);
+        elementsPage.checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
 
         //15.Select in dropdown
-        elementsPage.selectYellowInDropdown();
+        elementsPage.selectColorInDropdown(YELLOW);
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
         elementsPage.checkDropdownLogs(YELLOW);
 
         //17.Unselect and assert checkboxes
-        elementsPage.clickOnWaterCheckbox();
-        elementsPage.checkCheckboxesLogs(WATER, false);
-        elementsPage.clickOnWindCheckbox();
+        elementsPage.clickOnCheckbox(WATER);
+        elementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        elementsPage.checkCheckboxesLogs(WIND, false);
+        elementsPage.checkCheckboxesLogs(WATER, false,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WIND, false,CHECKBOX_LOG);
     }
 }

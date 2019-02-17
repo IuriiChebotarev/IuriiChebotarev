@@ -1,14 +1,17 @@
 package hw4;
 
-import com.codeborne.selenide.Condition;
+import base.hw4.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import hw4.enums.Checkboxes;
 import hw4.enums.Colors;
+import hw4.enums.LogsMessages;
 import hw4.enums.RadioButtons;
 import org.openqa.selenium.support.FindBy;
 
-public class ElementsPage {
+import static com.codeborne.selenide.Condition.text;
+
+public class ElementsPage extends BasePage {
 
     @FindBy(css = ".label-checkbox")
     private ElementsCollection checkboxesList;
@@ -28,19 +31,10 @@ public class ElementsPage {
     @FindBy(css = "#mCSB_1")
     private SelenideElement leftSection;
 
-    @FindBy(css = ".label-checkbox:nth-child(1) > input[type=checkbox]")
-    private SelenideElement waterCheckbox;
-
-    @FindBy(css = ".label-checkbox:nth-child(3) > input[type=checkbox]")
-    private SelenideElement windCheckbox;
-
-    @FindBy(css = ".label-radio:nth-child(4)")
-    private SelenideElement selenRadio;
-
     @FindBy(css = "select.uui-form-element")
     private SelenideElement colorsDropdown;
 
-    @FindBy(css = ".panel-body-list.logs > li")
+    @FindBy(css = ".logs")
     private SelenideElement logsPanel;
 
     public void checkDifferentPageElements() {
@@ -58,35 +52,33 @@ public class ElementsPage {
         leftSection.isDisplayed();
     }
 
-    // TODO This method should be parametrized
-    public void clickOnWaterCheckbox() {
-        waterCheckbox.click();
+    // TODO This method should be parametrized--FIXED
+    public void clickOnCheckbox(Checkboxes checkboxes) {
+        checkboxesList.get(checkboxes.indexOfCheckbox).click();
     }
 
-    // TODO This method should be parametrized
-    public void clickOnWindCheckbox() {
-        windCheckbox.click();
+    // TODO This method should be parametrized--REMADE TO ONE METHOD
+
+    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {
+        logsPanel.shouldHave(text(checkbox.value + logsMessages.text + status));
     }
 
-    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status) {
-        logsPanel.shouldHave(Condition.text(checkbox.value + ": condition changed to " + status));
+    public void selectRadioButton(RadioButtons radioButtons) {
+
+        radioButtonsList.get(radioButtons.index).click();
     }
 
-    public void selectSelenRadio() {
-        selenRadio.click();
+    public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
+        logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
-    public void checkRadiosLogs(RadioButtons radioButton) {
-        logsPanel.shouldHave(Condition.text("metal: value changed to " + radioButton));
-    }
-
-    // TODO This method should be parametrized
-    public void selectYellowInDropdown() {
+    // TODO This method should be parametrized--FIXED
+    public void selectColorInDropdown(Colors colors) {
         colorsDropdown.click();
-        colorsDropdown.selectOption("Yellow");
+        colorsDropdown.selectOption(colors.indexOfColor);
     }
 
     public void checkDropdownLogs(Colors colors) {
-        logsPanel.shouldHave(Condition.text("Colors: value changed to " + colors.label));
+        logsPanel.shouldHave(text("Colors: value changed to " + colors.label));
     }
 }

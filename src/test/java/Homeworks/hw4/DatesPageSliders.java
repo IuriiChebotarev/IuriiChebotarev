@@ -3,10 +3,15 @@ package Homeworks.hw4;
 import base.hw4.SelenideBase;
 import hw4.DatesPage;
 import hw4.HomePage;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static com.codeborne.selenide.Selenide.page;
+
+import static com.codeborne.selenide.Selenide.*;
 import static hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static hw4.enums.ServiceDropDown.DATES;
+import static hw4.enums.SlidersDirections.LEFT;
+import static hw4.enums.SlidersDirections.RIGHT;
 import static hw4.enums.Users.PETER;
 
 public class DatesPageSliders extends SelenideBase {
@@ -16,15 +21,16 @@ public class DatesPageSliders extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        homePage = new HomePage();
 
         //1.Open test site by URL
-        homePage.open(HOME_PAGE_DATA);
+        open(HOME_PAGE_DATA.url);
+        homePage = page(HomePage.class);
+        datesPage = page(DatesPage.class);
+    }
 
-        datesPage = new DatesPage();
-
-        page(homePage);
-        page(datesPage);
+    @AfterMethod
+    public void afterMethod() {
+        close();
     }
 
     @Test
@@ -40,39 +46,40 @@ public class DatesPageSliders extends SelenideBase {
 
         //5.Open through the header menu Service -> Dates Page
         // TODO This method should be parametrized
-        homePage.openDatesPage();
+        datesPage.clickOnServiceDropdownInHeader();
+        datesPage.selectPageInServiceDropdown(DATES);
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position
-        datesPage.moveLeftSlider(0);
-        datesPage.checkLogs("from", 0);
-        datesPage.moveRightSlider(100);
+        datesPage.moveSlider(LEFT, 0);
+        datesPage.moveSlider(RIGHT, 100);
 
         //7.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("from", 0);
         datesPage.checkLogs("to", 100);
 
         //8.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most left position
-        datesPage.moveLeftSlider(0);
-        datesPage.checkLogs("from", 0);
-        datesPage.moveRightSlider(0);
+        datesPage.moveSlider(LEFT, 0);
+        datesPage.moveSlider(RIGHT, 0);
 
         //9.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("from", 0);
         datesPage.checkLogs("to", 0);
 
         //10.Using drag-and-drop set Range sliders. left sliders - the most right position, right slider - the most right position
-        datesPage.moveRightSlider(100);
-        datesPage.checkLogs("to", 100);
-        datesPage.moveLeftSlider(100);
+        datesPage.moveSlider(LEFT, 100);
+        datesPage.moveSlider(RIGHT, 100);
 
         //11.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("from", 100);
+        datesPage.checkLogs("to", 100);
+        datesPage.checkLogs("to", 100);
 
         //12.Using drag-and-drop set Range sliders.
-        datesPage.moveLeftSlider(30);
-        datesPage.checkLogs("to", 100);
-        datesPage.moveRightSlider(70);
+        datesPage.moveSlider(LEFT, 30);
+        datesPage.moveSlider(RIGHT, 70);
 
         //13.Assert that for "From" and "To" sliders there are logs rows with corresponding values
         datesPage.checkLogs("to", 70);
+        datesPage.checkLogs("to", 100);
     }
 }
 
