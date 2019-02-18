@@ -5,8 +5,8 @@
         <groups><run><include name="hwFive"/></run></groups>
         <classes>
 
-            <class name="Homeworks.hw4.DatesPageSliders"></class>
-            <class name="Homeworks.hw4.ServicePageInterface"></class>
+            <class name="Homeworks.hw5.DatesPageSlidersJenkins"></class>
+            <class name="Homeworks.hw5.ServicePageInterfaceJenkins"></class>
         </classes>
     </test>
 </suite>
