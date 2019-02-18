@@ -3,10 +3,8 @@
 <suite name="hwFive" parallel="methods" thread-count="3" verbose="10">
     <test name="smoke" >
         <groups><run><include name="hwFive"/></run></groups>
-        <classes>
-
-            <class name="Homeworks.hw5.DatesPageSlidersJenkins"></class>
-            <class name="Homeworks.hw5.ServicePageInterfaceJenkins"></class>
-        </classes>
+        <packages>
+            <package name="hw5"/>
+        </packages>
     </test>
 </suite>
