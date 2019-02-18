@@ -1,8 +1,6 @@
 package Homeworks.hw5;
 
 import base.hw4.SelenideBase;
-import hw4.ElementsPage;
-import hw4.HomePage;
 import hw5.AllureAttachmentListener;
 import hw5.ElementsPageJenkins;
 import hw5.HomePageJenkins;
@@ -25,10 +23,8 @@ import static hw4.enums.ServiceDropDown.DIFFERENT_ELEMENTS;
 import static hw4.enums.ServiceDropDown.getServiceDropDownHeaders;
 import static hw4.enums.Users.PETER;
 
-@Feature("Smoke tests")
-@Story("Dates page test")
 @Listeners(AllureAttachmentListener.class)
-public class ServicePageInterfaceJenkins extends SelenideBase {
+public class ServicePageInterfaceJenkinsTest extends SelenideBase {
 
     private HomePageJenkins homePage;
     private ElementsPageJenkins elementsPage;
@@ -47,6 +43,8 @@ public class ServicePageInterfaceJenkins extends SelenideBase {
         close();
     }
 
+    @Feature("Smoke")
+    @Story("Service page test")
     @Test
     public void testServicePageInterface() {
         //2.Assert Browser title

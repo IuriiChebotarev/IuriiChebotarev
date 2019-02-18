@@ -1,8 +1,6 @@
 package Homeworks.hw5;
 
 import base.hw4.SelenideBase;
-import hw4.DatesPage;
-import hw4.HomePage;
 import hw5.AllureAttachmentListener;
 import hw5.DatesPageJenkins;
 import hw5.HomePageJenkins;
@@ -19,10 +17,9 @@ import static hw4.enums.ServiceDropDown.DATES;
 import static hw4.enums.SlidersDirections.LEFT;
 import static hw4.enums.SlidersDirections.RIGHT;
 import static hw4.enums.Users.PETER;
-@Feature("Smoke tests")
-@Story("Dates page test")
+
 @Listeners(AllureAttachmentListener.class)
-public class DatesPageSlidersJenkins extends SelenideBase {
+public class DatesPageSlidersJenkinsTest extends SelenideBase {
 
     private HomePageJenkins homePage;
     private DatesPageJenkins datesPage;
@@ -41,6 +38,8 @@ public class DatesPageSlidersJenkins extends SelenideBase {
         close();
     }
 
+    @Feature("Smoke")
+    @Story("Dates page test")
     @Test
     public void testDatesPageSliders() {
         //2.Assert Browser title
