@@ -5,6 +5,7 @@ import hw5.AllureAttachmentListener;
 import hw5.DatesPageJenkins;
 import hw5.HomePageJenkins;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,6 +26,7 @@ public class DatesPageSlidersJenkinsTest extends SelenideBase {
     private DatesPageJenkins datesPage;
 
     @BeforeMethod
+    @Step
     public void beforeMethod() {
 
         //1.Open test site by URL
