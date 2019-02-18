@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="hwFive" parallel="methods" thread-count="3" verbose="10">
+    <test name="smoke" >
+        <groups><run><include name="hwFive"/></run></groups>
+        <classes>
+
+            <class name="Homeworks.hw4.DatesPageSliders"></class>
+            <class name="Homeworks.hw4.ServicePageInterface"></class>
+        </classes>
+    </test>
+</suite>
