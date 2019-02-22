@@ -20,6 +20,7 @@ import static hw4.enums.HomePageData.HOME_PAGE_DATA;
 import static hw4.enums.LogsMessages.CHECKBOX_LOG;
 import static hw4.enums.LogsMessages.RADIOBUTTON_LOG;
 import static hw4.enums.RadioButtons.SELEN;
+import static hw4.enums.RadioButtons.SILVER;
 import static hw4.enums.ServiceDropDown.DIFFERENT_ELEMENTS;
 import static hw4.enums.ServiceDropDown.getServiceDropDownHeaders;
 import static hw4.enums.Users.PETER;
@@ -93,7 +94,7 @@ public class ServicePageInterfaceJenkinsFailedTest extends SelenideBase {
         elementsPage.selectRadioButton(SELEN);
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
-        elementsPage.checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
+        elementsPage.checkRadiosLogs(SILVER, RADIOBUTTON_LOG);
 
         //15.Select in dropdown
         elementsPage.selectColorInDropdown(YELLOW);
@@ -106,7 +107,7 @@ public class ServicePageInterfaceJenkinsFailedTest extends SelenideBase {
         elementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        elementsPage.checkCheckboxesLogs(WATER, true,CHECKBOX_LOG);
-        elementsPage.checkCheckboxesLogs(WIND, true,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WATER, false,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WIND, false,CHECKBOX_LOG);
     }
 }
