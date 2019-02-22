@@ -85,7 +85,7 @@ public class ServicePageInterfaceJenkinsFailedTest extends SelenideBase {
         elementsPage.clickOnCheckbox(WIND);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        elementsPage.checkCheckboxesLogs(WATER, false,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WATER, true,CHECKBOX_LOG);
         elementsPage.checkCheckboxesLogs(WIND, true,CHECKBOX_LOG);
 
 
@@ -106,7 +106,7 @@ public class ServicePageInterfaceJenkinsFailedTest extends SelenideBase {
         elementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        elementsPage.checkCheckboxesLogs(WATER, true,CHECKBOX_LOG);
-        elementsPage.checkCheckboxesLogs(WIND, false,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WATER, false,CHECKBOX_LOG);
+        elementsPage.checkCheckboxesLogs(WIND, true,CHECKBOX_LOG);
     }
 }
