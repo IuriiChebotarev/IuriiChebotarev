@@ -69,10 +69,17 @@ public class HomePage extends BasePage {
         assertEquals(getWebDriver().getTitle(), title);
     }
 
-    public void login(Users login,Users password) {
+    public void login(Users login, Users password) {
         userIcon.click();
         loginField.sendKeys(login.login);
         passwordField.sendKeys(password.password);
+        submit.click();
+    }
+
+    public void loginAs(Users users) {
+        userIcon.click();
+        loginField.sendKeys(users.login);
+        passwordField.sendKeys(users.password);
         submit.click();
     }
 

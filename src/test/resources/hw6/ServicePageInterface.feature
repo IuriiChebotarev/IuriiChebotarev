@@ -1,13 +1,13 @@
 Feature: Service Page Interface BDD
 
-  Scenario: Check Service Page Interface using Cucumber
+  Scenario: Check Service Page Interface
     Given I am on "Home Page"
     Then Browser title is "Home Page"
-    When I login as user 'epam' with password '1234'
+    When I login with login 'epam' and password '1234'
     Then User name is "PITER CHAILOVSKII"
     And Page contains all required elements
 
-    When I click on "Service" subcategory in the header
+    When I click on "Service" button in Header
     Then Service drop-down list in header contains options:
       |Support|
       |Dates|
@@ -29,7 +29,7 @@ Feature: Service Page Interface BDD
       |Different Elements|
       |Performance|
 
-    When I open 'Different Elements' page through "Service" drop-down list in header
+    And I open 'Different Elements' page from 'Service' dropdown
     Then Page contains left section
     And Page contains right section
     When I click on checkbox: 'Water'

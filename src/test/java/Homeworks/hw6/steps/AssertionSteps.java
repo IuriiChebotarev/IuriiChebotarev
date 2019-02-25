@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import hw6.ElementsPage;
 import hw6.HomePage;
+import hw6.UserTablePage;
 import static hw3.pageObject.enums.ItemsWithTexts.getHeaderItemsList;
 import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
 import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
@@ -75,7 +76,51 @@ public class AssertionSteps {
         new HomePage().checkTitleOfPage(title);
     }
 
+    @And("^6 NumberType Dropdowns are displayed on Users Table on User Table Page$")
+    public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfDropdowns();
+    }
 
+    @And("^6 User names are displayed on Users Table on User Table Page$")
+    public void userNamesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUsernames();
+    }
 
+    @And("^6 Description images are displayed on Users Table on User Table Page$")
+    public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUserImages();
+    }
+
+    @And("^6 Description texts under images are displayed on Users Table on User Table Page$")
+    public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUserDescriptions();
+    }
+
+    @And("^6 checkboxes are displayed on Users Table on User Table Page$")
+    public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfCheckboxes();
+    }
+
+    @And("^User table contains following values:$")
+    public void userTableContainsFollowingValues(DataTable usersTable) {
+        new UserTablePage().checkUsersTable(usersTable);
+    }
+
+    @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
+    public void logRowHasTextInLogSection(String logMessage, String status)  {
+        new UserTablePage().checkLogs(getLogMessage(logMessage), status);
+    }
+
+    @Then("^droplist contains values$")
+    public void droplistContainsValues(DataTable userRolesList) {
+        new UserTablePage().checkUserRolesInDropdown(userRolesList.asList(String.class));
+    }
 }
+
+
+
+
+
+
+
 
