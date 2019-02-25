@@ -31,13 +31,4 @@ public enum Users {
         }
         return null;
     }
-
-    public static Users getUserName(String userNameText) {
-        for (Users userName : Users.values()) {
-            if (userName.username.equals(userNameText)) {
-                return userName;
-            }
-        }
-        return null;
-    }
 }

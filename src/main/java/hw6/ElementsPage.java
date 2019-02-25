@@ -8,7 +8,6 @@ import hw6.enums.Colors;
 import hw6.enums.LogsMessages;
 import hw6.enums.RadioButtons;
 import org.openqa.selenium.support.FindBy;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -40,27 +39,13 @@ public class ElementsPage extends BasePage {
 
     public ElementsPage() {page(this);}
 
-    public void checkDifferentPageElements() {
-        checkboxesList.shouldHaveSize(4);
-        radioButtonsList.shouldHaveSize(4);
-        dropdownList.shouldHaveSize(1);
-        buttonesList.shouldHaveSize(2);
-    }
-
     public void checkRightSection() {
         rightSection.isDisplayed();
     }
 
-    public void checkLeftSection() {
-        leftSection.isDisplayed();
-    }
-
-    // TODO This method should be parametrized--FIXED
     public void clickOnCheckbox(Checkboxes checkboxes) {
         checkboxesList.get(checkboxes.indexOfCheckbox).click();
     }
-
-    // TODO This method should be parametrized--REMADE TO ONE METHOD
 
     public void checkCheckboxesLogs(Checkboxes checkbox, String status, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(checkbox.value + logsMessages.text + status));
@@ -75,7 +60,6 @@ public class ElementsPage extends BasePage {
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
-    // TODO This method should be parametrized--FIXED
     public void selectColorInDropdown(Colors colors) {
         colorsDropdown.click();
         colorsDropdown.selectOption(colors.indexOfColor);

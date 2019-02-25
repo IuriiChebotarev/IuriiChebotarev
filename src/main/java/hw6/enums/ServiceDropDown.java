@@ -22,15 +22,6 @@ public enum ServiceDropDown {
         this.label = text;
     }
 
-    public static List<String> getServiceDropDownHeaders() {
-        List<String> listOfServiceDropDownHeaders = new ArrayList<>();
-
-        for (ServiceDropDown serviceDropDown : ServiceDropDown.values()) {
-            listOfServiceDropDownHeaders.add(serviceDropDown.label);
-        }
-        return listOfServiceDropDownHeaders;
-    }
-
     public static ServiceDropDown getServiceDropdownItem(String itemName) {
         for (ServiceDropDown item : ServiceDropDown.values()) {
             if (item.label.equals(itemName)) {

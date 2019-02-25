@@ -8,9 +8,7 @@ import hw6.enums.HomePageData;
 import hw6.enums.Users;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
-
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.page;
@@ -88,26 +86,17 @@ public class HomePage extends BasePage {
     }
 
     public void checkItems(List<String> Items) {
-        // TODO What is purpose of searching here elements???--FIXED
         for (int i = 0; i < navigationBar.size(); i ++) {
             assertEquals(navigationBar.get(i).getText(), Items.get(i));
         }
     }
 
     public void checkImages() {
-        // TODO What is purpose of searching here elements???--FIXED
         for (WebElement benefitIcon : benefitIcons) {
             assertTrue(benefitIcon.isDisplayed());
         }
     }
 
-    public void checkBenefitTexts(List<String> benefitTexts) {
-        for (int i = 0; i < benefitTxt.size(); i ++) {
-            assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
-        }
-    }
-
-    // TODO I suppose this method could be parametrized--FIXED
     public void checkMainHeaderTitle(TextsOfHeaders textsOfHeaders) {
         assertEquals(mainTitle.getText(), textsOfHeaders.toString());
     }

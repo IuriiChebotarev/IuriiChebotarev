@@ -1,8 +1,5 @@
 package hw6.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum UsersInTable {
 
     ROMAN(0, "Roman"),
@@ -18,15 +15,6 @@ public enum UsersInTable {
     UsersInTable(int index, String label) {
         this.index = index;
         this.label = label;
-    }
-
-    public static List<String> getUsersList() {
-        List<String> listUsersLabels = new ArrayList<>();
-
-        for (UsersInTable usersInTable : UsersInTable.values()) {
-            listUsersLabels.add(usersInTable.label);
-        }
-        return listUsersLabels;
     }
 
     public static UsersInTable getUserInTable(String user) {

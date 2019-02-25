@@ -6,7 +6,6 @@ import hw6.ElementsPage;
 import hw6.HomePage;
 import hw6.UserTablePage;
 import hw6.enums.UsersInTable;
-
 import static hw6.enums.Checkboxes.getCheckbox;
 import static hw6.enums.Colors.getColor;
 import static hw6.enums.RadioButtons.getRadiobutton;
