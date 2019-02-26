@@ -14,16 +14,19 @@ import static hw6.enums.Users.*;
 
 public class ActionSteps {
 
+    // TODO Why do you decide send pair username and password instead of enum user?
     @When("^I login with login '([^\"]*)' and password '([^\"]*)'$")
     public void iLoginAsUser(String login, String password) {
         new HomePage().login(getLogin(login),(getPassword(password)));
     }
 
+    // TODO Why is menu item hardcoded?
     @When("^I click on \"Service\" button in Header$")
     public void iClickOnServiceDropDown() {
         new HomePage().clickOnServiceDropdownInHeader();
     }
 
+    // TODO Why is "Service" hardcoded?
     @When("^I click on \"Service\" subcategory in the left menu$")
     public void iClickOnSubcategoryInTheLeftMenu() {
         new HomePage().clickOnServiceDropdownInLeftMenu();
@@ -49,6 +52,8 @@ public class ActionSteps {
         new ElementsPage().selectColorInDropdown(getColor(color));
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why user name is hardcoded?
     @And("^I login as user \"Piter Chailovskii\"$")
     public void iLoginAsPiterChailovskii() {
         new HomePage().loginAs(PETER);
