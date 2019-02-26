@@ -66,6 +66,7 @@ public class UserTablePage extends BasePage {
         List<Map<String, String>> table = userTable.asMaps(String.class, String.class);
 
         for (int i = 0; i < table.size(); i++) {
+            // TODO Where is checking of the "Number"?
             usernames.get(i).should(text(table.get(i).get("User")));
             userDescriptions.get(i).should(text(table.get(i).get("Description")));
         }

@@ -18,16 +18,19 @@ import static hw6.enums.Users.PETER;
 
 public class AssertionSteps {
 
+    // TODO Why is title hardcoded?
     @Then("^Browser title is \"Home Page\"$")
     public void checkBrowserTitle() {
        new HomePage().checkTitle(HOME_PAGE_DATA);
     }
 
+    // TODO Why is user name hardcoded?
     @Then("^User name is \"PITER CHAILOVSKII\"$")
     public void checkUserName() {
        new HomePage().checkUsername(PETER);
     }
 
+    // TODO What does "all required elements" mean?
     @And("Page contains all required elements")
     public void checkRequiredElementsOnPage(){
         new HomePage().checkItems(getHeaderItemsList());
@@ -76,26 +79,36 @@ public class AssertionSteps {
         new HomePage().checkTitleOfPage(title);
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why number is hardcoded?
     @And("^6 NumberType Dropdowns are displayed on Users Table on User Table Page$")
     public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfDropdowns();
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why number is hardcoded?
     @And("^6 User names are displayed on Users Table on User Table Page$")
     public void userNamesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUsernames();
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why number is hardcoded?
     @And("^6 Description images are displayed on Users Table on User Table Page$")
     public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUserImages();
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why number is hardcoded?
     @And("^6 Description texts under images are displayed on Users Table on User Table Page$")
     public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUserDescriptions();
     }
 
+    // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
+    // TODO Why number is hardcoded?
     @And("^6 checkboxes are displayed on Users Table on User Table Page$")
     public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfCheckboxes();
