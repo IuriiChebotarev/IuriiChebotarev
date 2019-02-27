@@ -11,4 +11,13 @@ public enum HomePageData {
         this.url = url;
         this.title = title;
     }
+
+    public static HomePageData getHomePage(String homePageDataName) {
+        for (HomePageData homePageData : HomePageData.values()) {
+            if (homePageData.title.equals(homePageDataName)) {
+                return homePageData;
+            }
+        }
+        return null;
+    }
 }

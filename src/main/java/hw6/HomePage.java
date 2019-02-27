@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static hw6.enums.Users.getUserName;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -34,7 +35,7 @@ public class HomePage extends BasePage {
     private SelenideElement title;
 
     @FindBy(css = "#user-name")
-    private SelenideElement userName;
+    private SelenideElement displayedUserName;
 
     @FindBy(css = ".uui-navigation.nav.navbar-nav.m-l8 > li")
     private List<WebElement> navigationBar;
@@ -60,17 +61,19 @@ public class HomePage extends BasePage {
     }
 
     public void checkTitle(HomePageData homePageData) {
-        title.shouldHave(attribute("text", homePageData.title));
+
+        assertEquals(getWebDriver().getTitle(), homePageData.title);
     }
 
     public void checkTitleOfPage(String title) {
+
         assertEquals(getWebDriver().getTitle(), title);
     }
 
-    public void login(Users login, Users password) {
+    public void login(Users users) {
         userIcon.click();
-        loginField.sendKeys(login.login);
-        passwordField.sendKeys(password.password);
+        loginField.sendKeys(users.login);
+        passwordField.sendKeys(users.password);
         submit.click();
     }
 
@@ -82,7 +85,11 @@ public class HomePage extends BasePage {
     }
 
     public void checkUsername(Users users) {
-        userName.shouldHave(text(users.username));
+        displayedUserName.shouldHave(text(users.username));
+    }
+
+    public void checkUserByUserName(String username) {
+        assertEquals(displayedUserName.getText(), getUserName(username).username);
     }
 
     public void checkItems(List<String> Items) {
@@ -94,6 +101,12 @@ public class HomePage extends BasePage {
     public void checkImages() {
         for (WebElement benefitIcon : benefitIcons) {
             assertTrue(benefitIcon.isDisplayed());
+        }
+    }
+
+    public void checkBenefitTexts(List<String> benefitTexts) {
+        for (int i = 0; i < benefitTxt.size(); i ++) {
+            assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
         }
     }
 

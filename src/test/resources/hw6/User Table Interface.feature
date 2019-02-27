@@ -3,8 +3,8 @@ Feature: User Table Page BDD
 Scenario: User Table Page test
 
 Given I am on "Home Page"
-And I login as user "Piter Chailovskii"
-When I open 'User Table' page from 'Service' dropdown
+And I login as user PITER CHAILOVSKII
+When I open User Table page from 'Service' dropdown
 Then 'User Table' page is opened
 And 6 NumberType Dropdowns are displayed on Users Table on User Table Page
 And 6 User names are displayed on Users Table on User Table Page
@@ -21,10 +21,10 @@ And User table contains following values:
   | 5      | Yoshi Tannamuri   |     Cyclope some description          |
   | 6      | Giovanni Rovelli  |     Hulk some description             |
 
-When I select 'vip' checkbox for 'Sergey Ivan'
+When I select 'vip' checkbox for Sergey Ivan
 Then 1 log row has 'Vip: condition changed to ''true' text in log section
 
-When I click on dropdown in column Type for user 'Roman'
+When I click on dropdown in column Type for user Roman
 Then droplist contains values
 | Admin   |
 | User    |

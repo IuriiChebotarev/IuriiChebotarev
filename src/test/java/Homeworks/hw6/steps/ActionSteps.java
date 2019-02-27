@@ -8,63 +8,61 @@ import hw6.UserTablePage;
 import hw6.enums.UsersInTable;
 import static hw6.enums.Checkboxes.getCheckbox;
 import static hw6.enums.Colors.getColor;
+import static hw6.enums.HeaderItems.getNavigationItem;
+import static hw6.enums.ItemsInLeftMenu.getItemInLeftMenu;
 import static hw6.enums.RadioButtons.getRadiobutton;
 import static hw6.enums.ServiceDropDown.getServiceDropdownItem;
 import static hw6.enums.Users.*;
 
 public class ActionSteps {
 
-    // TODO Why do you decide send pair username and password instead of enum user?
-    @When("^I login with login '([^\"]*)' and password '([^\"]*)'$")
-    public void iLoginAsUser(String login, String password) {
-        new HomePage().login(getLogin(login),(getPassword(password)));
+    // TODO Why do you decide send pair username and password instead of enum user?--FIXED
+    @When("^I login as user ([^\"]*)$")
+    public void iLoginAsUser(String users) {
+        new HomePage().login(getUserName(users));
     }
 
-    // TODO Why is menu item hardcoded?
-    @When("^I click on \"Service\" button in Header$")
-    public void iClickOnServiceDropDown() {
-        new HomePage().clickOnServiceDropdownInHeader();
+    // TODO Why is menu item hardcoded?--FIXED
+    @When("^I click on ([^\"]*) button in Header$")
+    public void iClickOnServiceDropDown(String navigationItem) {
+
+        new HomePage().clickOnItemInHeader(getNavigationItem(navigationItem));
     }
 
-    // TODO Why is "Service" hardcoded?
-    @When("^I click on \"Service\" subcategory in the left menu$")
-    public void iClickOnSubcategoryInTheLeftMenu() {
-        new HomePage().clickOnServiceDropdownInLeftMenu();
+    // TODO Why is "Service" hardcoded?--FIXED
+    @When("^I click on ([^\"]*) subcategory in the left menu$")
+    public void iClickOnSubcategoryInTheLeftMenu(String itemInLeftMenu) {
+        new HomePage().clickOnItemInLeftMenu(getItemInLeftMenu(itemInLeftMenu));
     }
 
-    @And("^I open '([^\"]*)' page from 'Service' dropdown$")
+    @When("^I open ([^\"]*) page from 'Service' dropdown$")
     public void iOpenPageThroughDropDownListInHeader(String item) {
         new HomePage().selectPageInServiceDropdown(getServiceDropdownItem(item));
     }
 
-    @When("I click on checkbox: '([^\"]*)'$")
+    @When("I click on checkbox: ([^\"]*)$")
     public void iSelectCheckbox(String checkbox) {
         new ElementsPage().clickOnCheckbox(getCheckbox(checkbox));
     }
 
-    @When("^I select '([^\"]*)' radiobutton$")
+    @When("^I select ([^\"]*) radiobutton$")
     public void iSelectRadiobutton(String radiobuttonName) {
         new ElementsPage().selectRadioButton(getRadiobutton(radiobuttonName));
     }
 
-    @When("^I select '([^\"]*)' in drop-down list$")
+    @When("^I select ([^\"]*) in drop-down list$")
     public void iSelectInDropDownList(String color) {
         new ElementsPage().selectColorInDropdown(getColor(color));
     }
 
     // TODO What does 'And' means? Do not use 'And'. Mark step definitions as 'Given', 'When' or 'Then'
-    // TODO Why user name is hardcoded?
-    @And("^I login as user \"Piter Chailovskii\"$")
-    public void iLoginAsPiterChailovskii() {
-        new HomePage().loginAs(PETER);
-    }
-
-    @When("^I select 'vip' checkbox for '([^\"]*)'$")
+    // TODO Why user name is hardcoded?--FIXED
+    @When("^I select 'vip' checkbox for ([^\"]*)$")
     public void iSelectVipCheckboxForUser(String user) {
         new UserTablePage().selectCheckbox(UsersInTable.getUserInTable(user));
     }
 
-    @When("^I click on dropdown in column Type for user '([^\"]*)'$")
+    @When("^I click on dropdown in column Type for user ([^\"]*)$")
     public void iClickOnDropdownInColumnTypeForUserRoman(String user) {
         new UserTablePage().openDropdownList(UsersInTable.getUserInTable(user));
     }

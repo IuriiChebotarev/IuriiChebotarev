@@ -38,35 +38,42 @@ public class UserTablePage extends BasePage {
     @FindBy(css = "user-table tr")
     private ElementsCollection table;
 
+    @FindBy(css = "tr > td:nth-child(1)")
+    private ElementsCollection numbers;
+
+    @FindBy(css = ".panel-body-list.logs > li")
+    private ElementsCollection logsText;
+
     public UserTablePage() {
         page(this);
     }
 
-    public void checkAmountOfDropdowns() {
-        dropdown.shouldHaveSize(6);
+    public void checkAmountOfDropdowns(int amount) {
+        dropdown.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUsernames() {
-        usernames.shouldHaveSize(6);
+    public void checkAmountOfUsernames(int amount) {
+        usernames.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUserImages() {
-        userImages.shouldHaveSize(6);
+    public void checkAmountOfUserImages(int amount) {
+        userImages.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUserDescriptions() {
-        userDescriptions.shouldHaveSize(6);
+    public void checkAmountOfUserDescriptions(int amount) {
+        userDescriptions.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfCheckboxes() {
-        checkboxes.shouldHaveSize(6);
+    public void checkAmountOfCheckboxes(int amount) {
+        checkboxes.shouldHaveSize(amount);
     }
 
     public void checkUsersTable(DataTable userTable) {
         List<Map<String, String>> table = userTable.asMaps(String.class, String.class);
 
         for (int i = 0; i < table.size(); i++) {
-            // TODO Where is checking of the "Number"?
+            // TODO Where is checking of the "Number"?--FIXED
+            numbers.get(i).should(text(table.get(i).get("Number")));
             usernames.get(i).should(text(table.get(i).get("User")));
             userDescriptions.get(i).should(text(table.get(i).get("Description")));
         }
@@ -76,8 +83,9 @@ public class UserTablePage extends BasePage {
         checkboxes.get(usersInTable.index).click();
     }
 
-    public void checkLogs(LogsMessages logsMessages, String status) {
+    public void checkLogs(LogsMessages logsMessages, String status, int amount) {
         logsPanel.shouldHave(text(logsMessages.text + status));
+        logsText.shouldHaveSize(amount);
     }
 
     public void openDropdownList(UsersInTable usersInTable) {
