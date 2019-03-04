@@ -17,22 +17,4 @@ public enum HeaderItems {
         this.index = index;
         this.label = label;
     }
-
-    public static List<String> getHeaderItemsList() {
-        List<String> listOfHeaderItems = new ArrayList<>();
-
-        for (HeaderItems headerItems : HeaderItems.values()) {
-            listOfHeaderItems.add(headerItems.label);
-        }
-        return listOfHeaderItems;
-    }
-
-    public static HeaderItems getNavigationItem(String itemName) {
-        for (HeaderItems headerItems : HeaderItems.values()) {
-            if (headerItems.label.equals(itemName)) {
-                return headerItems;
-            }
-        }
-        return null;
-    }
 }

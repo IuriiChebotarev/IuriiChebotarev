@@ -1,28 +1,30 @@
 package hw7.pages;
 
-
 import com.epam.jdi.light.elements.composite.WebPage;
+import com.epam.jdi.light.ui.html.common.Icon;
 import hw7.entities.Users;
 import hw7.enums.HeaderItems;
-import hw7.forms.HeaderForm;
 import hw7.forms.LoginForm;
-import org.openqa.selenium.WebElement;
+import hw7.sections.HeaderSection;
 import org.openqa.selenium.support.FindBy;
+import static hw7.JDISite.metalsAndColorsPage;
 
 public class HomePageJDI extends WebPage {
 
     LoginForm loginForm;
-    HeaderForm headerForm;
+    public HeaderSection headerSection;
 
     @FindBy(css = "#user-icon")
-    private WebElement userIcon;
+    private Icon userIcon;
 
     public void login(Users users) {
         userIcon.click();
         loginForm.login(users);
     }
 
-    public void clickOnItemInHeader(HeaderItems navigationItems) {
-        headerForm.get(navigationItems.index).click();
+    public void openItemInHeaderMenu(HeaderItems navigationItems) {
+
+        headerSection.headerMenu.select(navigationItems.label);
+        metalsAndColorsPage.shouldBeOpened();
     }
 }
