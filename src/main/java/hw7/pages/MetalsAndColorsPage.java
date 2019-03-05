@@ -6,6 +6,9 @@ import hw7.forms.MetalAndColorsForm;
 import hw7.forms.SummaryForm;
 import hw7.sections.ResultSection;
 
+// TODO Code convention !
+// TODO All actions with form's elements should be encapsulate in form.
+// TODO Same story about the elements, that worm is consist of.
 public class MetalsAndColorsPage extends WebPage {
 
     private MetalAndColorsForm metalAndColorsForm;
@@ -23,15 +26,16 @@ public class MetalsAndColorsPage extends WebPage {
     public void calculateSummary(int[] radiobuttons) {
         summaryForm.setOdds(radiobuttons[0]);
         summaryForm.setEven(radiobuttons[1]);
+        // TODO Where did you find this particular action in the script ?
         summaryForm.calculate.click();
     }
 
     public void selectElement(String[] elements) {
-
         metalAndColorsForm.elements.select(elements[0],elements[1]);
     }
 
     public void selectColor (String color) {
+        // TODO Take a look on IDEA warning !
         metalAndColorsForm.colors.select((color));
     }
 
