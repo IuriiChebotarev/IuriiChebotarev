@@ -22,8 +22,9 @@ public class HomePageJDI extends WebPage {
         loginForm.login(users);
     }
 
+    // TODO You have a parameter in this method, so, obviously, it can be use in order to open any kins of page,
+    // but what about verification ?
     public void openItemInHeaderMenu(HeaderItems navigationItems) {
-
         headerSection.headerMenu.select(navigationItems.label);
         metalsAndColorsPage.shouldBeOpened();
     }

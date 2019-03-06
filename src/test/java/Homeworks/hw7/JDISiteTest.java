@@ -26,6 +26,7 @@ public class JDISiteTest {
         JDISite.homePageJDI.openItemInHeaderMenu(METALS_AND_COLORS);
         JDISite.metalsAndColorsPage.fillForm(data);
         JDISite.metalsAndColorsPage.submit();
+        // TODO Great, and where is verification step ?
     }
 
     @AfterSuite

@@ -7,6 +7,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
 
+// TODO This class should be parametrised by entity !
 public class MetalAndColorsForm extends Form {
 
     public SummaryForm summaryForm;
