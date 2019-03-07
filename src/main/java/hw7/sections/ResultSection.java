@@ -12,8 +12,8 @@ public class ResultSection extends Section {
     public WebList results;
 
     public void check(MetalAndColorsData data) {
-        for (int i=0;i<data.resultLog().length;i++) {
-            assertEquals(results.get(i).getText(),data.resultLog()[i]);
+        for (int i=0;i<data.resultLog().size();i++) {
+            assertEquals(results.get(i).getText(),data.resultLog().get(i));
         }
     }
 }

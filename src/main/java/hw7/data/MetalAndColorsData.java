@@ -1,23 +1,25 @@
 package hw7.data;
 
 import hw7.enums.*;
-
+import java.util.ArrayList;
+import java.util.List;
 // TODO Code convention !!
 public class MetalAndColorsData {
+
     public int[] summary = {Radiobuttons.THREE.number,Radiobuttons.EIGHT.number};
-    public String[] elements = {NatureElements.Water.name(), NatureElements.Fire.name()};
+    public String[] element = {NatureElements.Water.name(), NatureElements.Fire.name()};
     public String color = Colors.Red.name();
     public String metals = Metals.Selen.name();
-    public String[] vegetables = {Vegetables.Cucumber.name(),Vegetables.Tomato.name()};
+    public String[] vegetable = {Vegetables.Cucumber.name(),Vegetables.Tomato.name()};
 
-    public String[] resultLog() {
+    public List<String> resultLog() {
         // TODO It will be better with List<String>
-        String[] result = new String[5];
-        result[0] = "Summary: " + (summary[0]+summary[1]);
-        result[1] = "Elements: " + elements[0] +", "+ elements[1];
-        result[2] = "Color: " + color;
-        result[3] = "Metal: " + metals;
-        result[4] = "Vegetables: " + vegetables[0]+", "+ vegetables[1];
+        List<String> result = new ArrayList<>();
+        result.add(0,"Summary: " + (summary[0]+summary[1]));
+        result.add(1,"Elements: " + element[0] +", "+ element[1]);
+        result.add(2,"Color: " + color);
+        result.add(3,"Metal: " + metals);
+        result.add(4,"Vegetables: " + vegetable[0]+", "+ vegetable[1]);
         return result;
     }
 }

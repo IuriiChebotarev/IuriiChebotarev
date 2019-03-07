@@ -13,5 +13,6 @@ public class JDISite {
 
     @Url("metals-colors.html")
     public static MetalsAndColorsPage metalsAndColorsPage;
+
 }
 

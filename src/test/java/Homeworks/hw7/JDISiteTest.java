@@ -12,10 +12,11 @@ import static hw7.enums.HeaderItems.METALS_AND_COLORS;
 
 public class JDISiteTest {
 
-    MetalAndColorsData data = new MetalAndColorsData();
+    private MetalAndColorsData data = new MetalAndColorsData();
 
     @BeforeSuite
     public void beforeSuite() {
+
         PageFactory.initElements(JDISite.class);
     }
 
@@ -24,8 +25,9 @@ public class JDISiteTest {
         JDISite.homePageJDI.open();
         JDISite.homePageJDI.login(PETER);
         JDISite.homePageJDI.openItemInHeaderMenu(METALS_AND_COLORS);
-        JDISite.metalsAndColorsPage.fillForm(data);
-        JDISite.metalsAndColorsPage.submit();
+        JDISite.metalsAndColorsPage.fillMetalAndColorsForm(data);
+        JDISite.metalsAndColorsPage.submitForm();
+        JDISite.metalsAndColorsPage.checkResultLog(data);
         // TODO Great, and where is verification step ?
     }
 

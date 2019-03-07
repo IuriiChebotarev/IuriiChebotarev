@@ -1,20 +1,20 @@
 package hw7.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum HeaderItems {
 
-    HOME(0, "HOME"),
-    CONTACT_FORM(1, "CONTACT FORM"),
-    SERVICE(2, "SERVICE"),
-    METALS_AND_COLORS(3, "METALS & COLORS");
+    HOME(0, "HOME","Home Page"),
+    CONTACT_FORM(1, "CONTACT FORM","Contact Form"),
+    SERVICE(2, "SERVICE",null),
+    METALS_AND_COLORS(3, "METALS & COLORS","Metal and Colors");
 
     public int index;
     public String label;
+    public String pageTitle;
 
-    HeaderItems(int index, String label) {
+
+    HeaderItems(int index, String label, String pageTitle) {
         this.index = index;
         this.label = label;
+        this.pageTitle = pageTitle;
     }
 }
