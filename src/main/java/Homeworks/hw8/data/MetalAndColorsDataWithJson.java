@@ -18,8 +18,8 @@ public class MetalAndColorsDataWithJson {
 
         Gson gson = new Gson();
         JsonObject jsonDataSet = new JsonParser().parse(new FileReader(PATH_TO_DATA_FILES)).getAsJsonObject();
-        Type type = new TypeToken<Map<String, MetalAndColorsData>>() {}.getType();
-        Map<String, MetalAndColorsData> dataSets = gson.fromJson(jsonDataSet, type);
+        Type token = new TypeToken<Map<String, MetalAndColorsData>>() {}.getType();
+        Map<String, MetalAndColorsData> dataSets = gson.fromJson(jsonDataSet, token);
 
         Object[][] objects = new Object[dataSets.size()][1];
         int i = 0;
