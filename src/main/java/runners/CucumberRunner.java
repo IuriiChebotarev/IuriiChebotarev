@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.close;
 
-@CucumberOptions(features = "classpath:hw6", glue = "classpath:Homeworks.hw6.steps")
+@CucumberOptions(features = "classpath:reshw6", glue = "classpath:Homeworks.reshw6.steps")
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 

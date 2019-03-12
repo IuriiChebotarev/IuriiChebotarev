@@ -1,7 +1,7 @@
 package Homeworks.hw3;
 
 import base.SeleniumBase;
-import hw3.pageObject.enums.*;
+import Homeworks.hw3.pageObject.enums.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,12 +9,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import hw3.pageObject.HomePage;
-import static hw3.pageObject.enums.ItemsWithTexts.*;
-import static hw3.pageObject.enums.JdiLink.JDI_LINK;
-import static hw3.pageObject.enums.TextsBelowImages.*;
-import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
-import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
+import Homeworks.hw3.pageObject.HomePage;
+import static Homeworks.hw3.pageObject.enums.ItemsWithTexts.*;
+import static Homeworks.hw3.pageObject.enums.JdiLink.JDI_LINK;
+import static Homeworks.hw3.pageObject.enums.TextsBelowImages.*;
+import static Homeworks.hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
+import static Homeworks.hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
 
 public class EpamHomePageWithPageObjects extends SeleniumBase {
     private WebDriver chromeDriver;

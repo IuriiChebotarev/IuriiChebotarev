@@ -1,22 +1,19 @@
 package Homeworks.hw4;
 
 import base.hw4.SelenideBase;
-import hw4.DatesPage;
-import hw4.ElementsPage;
-import hw4.HomePage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.*;
-import static hw4.enums.Checkboxes.WATER;
-import static hw4.enums.Checkboxes.WIND;
-import static hw4.enums.Colors.YELLOW;
-import static hw4.enums.HomePageData.HOME_PAGE_DATA;
-import static hw4.enums.LogsMessages.CHECKBOX_LOG;
-import static hw4.enums.LogsMessages.RADIOBUTTON_LOG;
-import static hw4.enums.RadioButtons.SELEN;
-import static hw4.enums.ServiceDropDown.*;
-import static hw4.enums.Users.PETER;
+import static Homeworks.hw4.enums.Checkboxes.WATER;
+import static Homeworks.hw4.enums.Checkboxes.WIND;
+import static Homeworks.hw4.enums.Colors.YELLOW;
+import static Homeworks.hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static Homeworks.hw4.enums.LogsMessages.CHECKBOX_LOG;
+import static Homeworks.hw4.enums.LogsMessages.RADIOBUTTON_LOG;
+import static Homeworks.hw4.enums.RadioButtons.SELEN;
+import static Homeworks.hw4.enums.ServiceDropDown.*;
+import static Homeworks.hw4.enums.Users.PETER;
 
 public class ServicePageInterface extends SelenideBase {
 

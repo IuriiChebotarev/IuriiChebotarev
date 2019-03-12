@@ -2,7 +2,7 @@ package base.hw4;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import hw4.enums.ServiceDropDown;
+import Homeworks.hw4.enums.ServiceDropDown;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 

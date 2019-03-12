@@ -1,18 +1,17 @@
 package Homeworks.hw6.steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
-import hw6.ElementsPage;
-import hw6.HomePage;
-import hw6.UserTablePage;
-import hw6.enums.UsersInTable;
-import static hw6.enums.Checkboxes.getCheckbox;
-import static hw6.enums.Colors.getColor;
-import static hw6.enums.HeaderItems.getNavigationItem;
-import static hw6.enums.ItemsInLeftMenu.getItemInLeftMenu;
-import static hw6.enums.RadioButtons.getRadiobutton;
-import static hw6.enums.ServiceDropDown.getServiceDropdownItem;
-import static hw6.enums.Users.*;
+import Homeworks.hw6.ElementsPage;
+import Homeworks.hw6.HomePage;
+import Homeworks.hw6.UserTablePage;
+import Homeworks.hw6.enums.UsersInTable;
+import static Homeworks.hw6.enums.Checkboxes.getCheckbox;
+import static Homeworks.hw6.enums.Colors.getColor;
+import static Homeworks.hw6.enums.HeaderItems.getNavigationItem;
+import static Homeworks.hw6.enums.ItemsInLeftMenu.getItemInLeftMenu;
+import static Homeworks.hw6.enums.RadioButtons.getRadiobutton;
+import static Homeworks.hw6.enums.ServiceDropDown.getServiceDropdownItem;
+import static Homeworks.hw6.enums.Users.*;
 
 public class ActionSteps {
 

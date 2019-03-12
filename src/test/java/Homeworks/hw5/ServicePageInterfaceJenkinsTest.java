@@ -1,9 +1,6 @@
 package Homeworks.hw5;
 
 import base.hw4.SelenideBase;
-import hw5.AllureAttachmentListener;
-import hw5.ElementsPageJenkins;
-import hw5.HomePageJenkins;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
@@ -13,16 +10,16 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static hw4.enums.Checkboxes.WATER;
-import static hw4.enums.Checkboxes.WIND;
-import static hw4.enums.Colors.YELLOW;
-import static hw4.enums.HomePageData.HOME_PAGE_DATA;
-import static hw4.enums.LogsMessages.CHECKBOX_LOG;
-import static hw4.enums.LogsMessages.RADIOBUTTON_LOG;
-import static hw4.enums.RadioButtons.SELEN;
-import static hw4.enums.ServiceDropDown.DIFFERENT_ELEMENTS;
-import static hw4.enums.ServiceDropDown.getServiceDropDownHeaders;
-import static hw4.enums.Users.PETER;
+import static Homeworks.hw4.enums.Checkboxes.WATER;
+import static Homeworks.hw4.enums.Checkboxes.WIND;
+import static Homeworks.hw4.enums.Colors.YELLOW;
+import static Homeworks.hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static Homeworks.hw4.enums.LogsMessages.CHECKBOX_LOG;
+import static Homeworks.hw4.enums.LogsMessages.RADIOBUTTON_LOG;
+import static Homeworks.hw4.enums.RadioButtons.SELEN;
+import static Homeworks.hw4.enums.ServiceDropDown.DIFFERENT_ELEMENTS;
+import static Homeworks.hw4.enums.ServiceDropDown.getServiceDropDownHeaders;
+import static Homeworks.hw4.enums.Users.PETER;
 
 @Listeners(AllureAttachmentListener.class)
 public class ServicePageInterfaceJenkinsTest extends SelenideBase {

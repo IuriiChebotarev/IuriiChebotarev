@@ -1,19 +1,18 @@
 package Homeworks.hw6.steps;
 
 import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import hw6.ElementsPage;
-import hw6.HomePage;
-import hw6.UserTablePage;
-import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
-import static hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
-import static hw6.enums.HeaderItems.getHeaderItemsList;
-import static hw6.enums.Checkboxes.getCheckbox;
-import static hw6.enums.Colors.getColor;
-import static hw6.enums.HomePageData.getHomePage;
-import static hw6.enums.LogsMessages.getLogMessage;
-import static hw6.enums.RadioButtons.getRadiobutton;
+import Homeworks.hw6.ElementsPage;
+import Homeworks.hw6.HomePage;
+import Homeworks.hw6.UserTablePage;
+import static Homeworks.hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TEXT;
+import static Homeworks.hw3.pageObject.enums.TextsOfHeaders.MAIN_HEADER_TITLE;
+import static Homeworks.hw6.enums.HeaderItems.getHeaderItemsList;
+import static Homeworks.hw6.enums.Checkboxes.getCheckbox;
+import static Homeworks.hw6.enums.Colors.getColor;
+import static Homeworks.hw6.enums.HomePageData.getHomePage;
+import static Homeworks.hw6.enums.LogsMessages.getLogMessage;
+import static Homeworks.hw6.enums.RadioButtons.getRadiobutton;
 
 
 public class AssertionSteps {

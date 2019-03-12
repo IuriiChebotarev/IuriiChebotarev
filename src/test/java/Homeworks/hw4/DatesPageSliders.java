@@ -1,18 +1,16 @@
 package Homeworks.hw4;
 
 import base.hw4.SelenideBase;
-import hw4.DatesPage;
-import hw4.HomePage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static hw4.enums.HomePageData.HOME_PAGE_DATA;
-import static hw4.enums.ServiceDropDown.DATES;
-import static hw4.enums.SlidersDirections.LEFT;
-import static hw4.enums.SlidersDirections.RIGHT;
-import static hw4.enums.Users.PETER;
+import static Homeworks.hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static Homeworks.hw4.enums.ServiceDropDown.DATES;
+import static Homeworks.hw4.enums.SlidersDirections.LEFT;
+import static Homeworks.hw4.enums.SlidersDirections.RIGHT;
+import static Homeworks.hw4.enums.Users.PETER;
 
 public class DatesPageSliders extends SelenideBase {
 

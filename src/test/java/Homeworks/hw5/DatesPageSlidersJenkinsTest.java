@@ -1,9 +1,6 @@
 package Homeworks.hw5;
 
 import base.hw4.SelenideBase;
-import hw5.AllureAttachmentListener;
-import hw5.DatesPageJenkins;
-import hw5.HomePageJenkins;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
@@ -13,11 +10,11 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static hw4.enums.HomePageData.HOME_PAGE_DATA;
-import static hw4.enums.ServiceDropDown.DATES;
-import static hw4.enums.SlidersDirections.LEFT;
-import static hw4.enums.SlidersDirections.RIGHT;
-import static hw4.enums.Users.PETER;
+import static Homeworks.hw4.enums.HomePageData.HOME_PAGE_DATA;
+import static Homeworks.hw4.enums.ServiceDropDown.DATES;
+import static Homeworks.hw4.enums.SlidersDirections.LEFT;
+import static Homeworks.hw4.enums.SlidersDirections.RIGHT;
+import static Homeworks.hw4.enums.Users.PETER;
 
 @Listeners(AllureAttachmentListener.class)
 public class DatesPageSlidersJenkinsTest extends SelenideBase {

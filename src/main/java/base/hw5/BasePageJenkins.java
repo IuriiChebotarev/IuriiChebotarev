@@ -2,7 +2,7 @@ package base.hw5;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import hw4.enums.ServiceDropDown;
+import Homeworks.hw4.enums.ServiceDropDown;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 

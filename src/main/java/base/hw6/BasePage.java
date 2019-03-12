@@ -2,9 +2,9 @@ package base.hw6;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import hw6.enums.HeaderItems;
-import hw6.enums.ItemsInLeftMenu;
-import hw6.enums.ServiceDropDown;
+import Homeworks.hw6.enums.HeaderItems;
+import Homeworks.hw6.enums.ItemsInLeftMenu;
+import Homeworks.hw6.enums.ServiceDropDown;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import static com.codeborne.selenide.Condition.text;

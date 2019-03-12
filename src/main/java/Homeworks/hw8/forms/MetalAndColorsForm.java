@@ -1,4 +1,4 @@
-package hw7.forms;
+package Homeworks.hw8.forms;
 
 import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.complex.WebList;
@@ -6,8 +6,8 @@ import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
-import hw7.data.MetalAndColorsData;
-// TODO This class should be parametrised by entity !
+import Homeworks.hw8.data.MetalAndColorsData;
+
 public class MetalAndColorsForm extends Form<MetalAndColorsData> {
 
     private SummaryForm summaryForm;
@@ -39,26 +39,28 @@ public class MetalAndColorsForm extends Form<MetalAndColorsData> {
     public void fillForm(MetalAndColorsData data) {
 
         calculateSummary(data.summary);
-        selectElement(data.element);
+        selectElement(data.elements);
         selectColor(data.color);
         selectMetal(data.metals);
-        selectVegetable(data.vegetable);
+        selectVegetable(data.vegetables);
 
     }
 
     private void calculateSummary(int[] radiobuttons) {
 
         summaryForm.calculate(radiobuttons);
-        // TODO Where did you find this particular action in the script ?
+
     }
 
-    private void selectElement(String[] element) {
+    private void selectElement(String[] natureElement) {
 
-        elements.select(element[0],element[1]);
+        for (String element:natureElement){
+        elements.select(element);
+        }
     }
 
     private void selectColor (String color) {
-        // TODO Take a look on IDEA warning !
+
         colors.select(color);
     }
 
@@ -68,9 +70,11 @@ public class MetalAndColorsForm extends Form<MetalAndColorsData> {
     }
 
     private void selectVegetable (String[] vegetable){
+
         vegetables.select(vegetables.getSelected());
-        vegetables.select(vegetable[0]);
-        vegetables.select(vegetable[1]);
+        for (String element : vegetable) {
+            vegetables.select(element);
+        }
     }
 
     public void submit () {
