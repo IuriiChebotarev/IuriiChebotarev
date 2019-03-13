@@ -3,7 +3,7 @@ package Homeworks.hw8;
 import com.epam.jdi.light.driver.WebDriverFactory;
 import com.epam.jdi.light.ui.html.PageFactory;
 import Homeworks.hw8.data.MetalAndColorsData;
-import Homeworks.hw8.data.MetalAndColorsDataWithJson;
+import Homeworks.hw8.data.MetalAndColorsDataFromJson;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -18,7 +18,7 @@ public class JDISiteTestWithJson {
         PageFactory.initElements(JDISite.class);
     }
 
-    @Test(dataProvider = "jsonDataProvider",dataProviderClass = MetalAndColorsDataWithJson.class)
+    @Test(dataProvider = "jsonDataProvider",dataProviderClass = MetalAndColorsDataFromJson.class)
 
     public void jDISiteTest(MetalAndColorsData data) {
         JDISite.homePageJDI.open();

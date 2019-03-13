@@ -9,7 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.Map;
-public class MetalAndColorsDataWithJson {
+
+public class MetalAndColorsDataFromJson {
 
     @DataProvider
     public static Object[][] jsonDataProvider() throws FileNotFoundException {
