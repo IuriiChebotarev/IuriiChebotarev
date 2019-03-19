@@ -1,4 +1,4 @@
-package hw7.forms;
+package Homeworks.hw7.forms;
 
 import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.complex.WebList;
@@ -6,7 +6,7 @@ import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
-import hw7.data.MetalAndColorsData;
+import Homeworks.hw7.data.MetalAndColorsData;
 // TODO This class should be parametrised by entity !
 public class MetalAndColorsForm extends Form<MetalAndColorsData> {
 

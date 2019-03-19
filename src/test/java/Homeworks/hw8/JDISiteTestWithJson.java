@@ -7,8 +7,8 @@ import Homeworks.hw8.data.MetalAndColorsDataFromJson;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import static hw7.entities.Users.PETER;
-import static hw7.enums.HeaderItems.METALS_AND_COLORS;
+import static Homeworks.hw7.entities.Users.PETER;
+import static Homeworks.hw7.enums.HeaderItems.METALS_AND_COLORS;
 
 public class JDISiteTestWithJson {
 

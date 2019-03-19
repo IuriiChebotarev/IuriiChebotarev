@@ -2,13 +2,13 @@ package Homeworks.hw7;
 
 import com.epam.jdi.light.driver.WebDriverFactory;
 import com.epam.jdi.light.ui.html.PageFactory;
-import hw7.JDISite;
-import hw7.data.MetalAndColorsData;
+import Homeworks.hw7.JDISite;
+import Homeworks.hw7.data.MetalAndColorsData;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import static hw7.entities.Users.PETER;
-import static hw7.enums.HeaderItems.METALS_AND_COLORS;
+import static Homeworks.hw7.entities.Users.PETER;
+import static Homeworks.hw7.enums.HeaderItems.METALS_AND_COLORS;
 
 public class JDISiteTest {
 

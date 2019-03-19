@@ -7,7 +7,7 @@ import com.epam.jdi.light.ui.html.common.Button;
 
 import java.util.Objects;
 
-import static hw7.enums.Radiobuttons.getIndex;
+import static Homeworks.hw7.enums.Radiobuttons.getIndex;
 
 public class SummaryForm extends Form {
 

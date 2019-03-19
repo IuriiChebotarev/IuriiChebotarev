@@ -1,9 +1,9 @@
-package hw7.pages;
+package Homeworks.hw7.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
-import hw7.data.MetalAndColorsData;
-import hw7.forms.MetalAndColorsForm;
-import hw7.sections.ResultSection;
+import Homeworks.hw7.data.MetalAndColorsData;
+import Homeworks.hw7.forms.MetalAndColorsForm;
+import Homeworks.hw7.sections.ResultSection;
 // TODO Code convention !
 // TODO All actions with form's elements should be encapsulate in form.
 // TODO Same story about the elements, that worm is consist of.

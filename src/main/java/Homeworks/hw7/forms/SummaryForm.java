@@ -1,11 +1,11 @@
-package hw7.forms;
+package Homeworks.hw7.forms;
 
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.ui.html.base.HtmlRadioGroup;
 import com.epam.jdi.light.ui.html.common.Button;
 import java.util.Objects;
-import static hw7.enums.Radiobuttons.getIndex;
+import static Homeworks.hw7.enums.Radiobuttons.getIndex;
 
 public class SummaryForm extends Form {
 

@@ -1,4 +1,4 @@
-package hw7.entities;
+package Homeworks.hw7.entities;
 
 public class Users {
 

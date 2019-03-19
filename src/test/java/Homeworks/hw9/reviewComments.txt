@@ -1,8 +1,9 @@
 ***замечания***
 - нет использования пропертей проекта - нужно добавить--добавил в VerifyWordsWithSeveralMistakes - ***нет смысла в этой переменной на уровне проекта***
+добавил в кейсы в сьюте VerifySpellerSettings
 - VerifyWordsWithMistakes***не поправлен***, VerifyWordsWithExtraSymbols***+***
   - если в скрипт прописать слово без ошибки, "мама", например, то скринт проходит все равно--пофиксил
-  - если падает одна итерация, то дальше тест не идет - надо поправить
+  - если падает одна итерация, то дальше тест не идет - надо поправить--пофиксил
 - добавь проверки по xpath--добавил в Verify_FIND_REPEAT_WORDS_Setting ***+***
 - добавь setup scrit в какой-либо тест--добавил в VerifyWordsWithMistakes, VerifyWordsWithExtraSymbols, VerifyWordsWithMissedSymbols ***+**
 ***понравилось***

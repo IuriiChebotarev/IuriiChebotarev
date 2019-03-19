@@ -1,9 +1,9 @@
-package hw7.sections;
+package Homeworks.hw7.sections;
 
 import com.epam.jdi.light.elements.complex.WebList;
 import com.epam.jdi.light.elements.composite.Section;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
-import hw7.data.MetalAndColorsData;
+import Homeworks.hw7.data.MetalAndColorsData;
 import static org.testng.Assert.assertEquals;
 
 public class ResultSection extends Section {

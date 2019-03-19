@@ -1,4 +1,4 @@
-package hw7.sections;
+package Homeworks.hw7.sections;
 
 import com.epam.jdi.light.elements.composite.Section;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;

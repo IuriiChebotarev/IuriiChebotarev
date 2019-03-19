@@ -1,6 +1,6 @@
-package hw7.data;
+package Homeworks.hw7.data;
 
-import hw7.enums.*;
+import Homeworks.hw7.enums.*;
 import java.util.ArrayList;
 import java.util.List;
 // TODO Code convention !!
