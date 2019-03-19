@@ -1,8 +1,8 @@
 ***замечания***
-- нет использования пропертей проекта - нужно добавить 
+- нет использования пропертей проекта - нужно добавить--добавил в VerifyWordsWithSeveralMistakes
 - VerifyWordsWithMistakes, VerifyWordsWithExtraSymbols
-  - если в скрипт прописать слово без ошибки, "мама", например, то скринт проходит все равно
-- добавь проверки по xpath
-- добавь setup scrit в какой-либо тест
+  - если в скрипт прописать слово без ошибки, "мама", например, то скринт проходит все равно--пофиксил
+- добавь проверки по xpath--добавил в Verify_FIND_REPEAT_WORDS_Setting
+- добавь setup scrit в какой-либо тест--добавил в VerifyWordsWithMistakes, VerifyWordsWithExtraSymbols, VerifyWordsWithMissedSymbols
 ***понравилось***
 - добавлял в тестах дескрипшены
