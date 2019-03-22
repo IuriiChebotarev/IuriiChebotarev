@@ -1,26 +1,25 @@
 package Homeworks.hw10.constans;
 
-/**
- * Created by yulia_atlasova@epam.com.
- * Constants of YandexSpeller
- */
 public class YandexSpellerConstants {
 
-    //useful constants for API under test
     public static final String PARAM_TEXT = "text";
     public static final String PARAM_OPTIONS = "options";
-    public static final String PARAM_LANG = "lang";
-    public static final String QUOTES = "\"";
+    public static final String PARAM_LANGS = "languages";
 
-
-    public enum Language {
+    public enum Languages {
         RU("ru"),
         UK("uk"),
         EN("en");
+
         public String languageCode;
 
-        private Language(String lang) {
+        private Languages(String lang) {
+
             this.languageCode = lang;
+        }
+
+        public String getLang() {
+            return languageCode;
         }
     }
 
@@ -31,21 +30,31 @@ public class YandexSpellerConstants {
         ERROR_TOO_MANY_ERRORS("4");
 
         private String code;
-        public String getCode() {return code;}
+
+        public String getCode() {
+            return code;}
 
         private ErrorCodes(String code) {
             this.code = code;
         }
+
     }
+    public enum Options {
+        IGNORE_DIGITS(2),
+        IGNORE_URLS(4),
+        FIND_REPEAT_WORDS(8),
+        IGNORE_CAPITALIZATION(512);
 
-    public enum CorrectTexts {
-        RUSSIAN("Этот текст на русском языке"),
-        URL_TEXT("This text contains URL http://yandex.ru");
-        private String text;
-        public String text() {return text;}
+        private int option;
 
-        private CorrectTexts(String text) {
-            this.text = text;
+        public int getOption() {
+            return option;
+        }
+
+        private Options(int option) {
+            this.option = option;
+
+
         }
     }
 }
