@@ -1,5 +1,10 @@
 package Homeworks.hw10;
 
+import static Homeworks.hw10.constans.YandexSpellerConstants.PARAM_LANGS;
+import static Homeworks.hw10.constans.YandexSpellerConstants.PARAM_OPTIONS;
+import static Homeworks.hw10.constans.YandexSpellerConstants.PARAM_TEXT;
+import static org.hamcrest.Matchers.lessThan;
+
 import Homeworks.hw10.constans.YandexSpellerConstants;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -9,20 +14,27 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
-import java.util.*;
-import static Homeworks.hw10.constans.YandexSpellerConstants.*;
-import static org.hamcrest.Matchers.lessThan;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+
+//todo в этом классе оставь только запросы/формирование запросов к апи. например getSpellChecker()
 public class YandexSpellerCheckTextsApi {
 
     private YandexSpellerCheckTextsApi() {
     }
 
+    //todo https://speller.yandex.net/ это тоже кончстанта. может быть в файле с кончитантами или вообще в test.properties, что правильнее
     public static final String YANDEX_SPELLER_API_URI =
             "https://speller.yandex.net/services/spellservice.json/checkTexts";
 
     private HashMap<String, Object> params = new HashMap<>();
 
+
+    //todo перенеси в другой класс, в котором будут вормироваться параметры.
     public static class ApiBuilder {
         YandexSpellerCheckTextsApi spellerApi;
 
