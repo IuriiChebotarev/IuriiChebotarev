@@ -5,9 +5,11 @@ public enum SoapAction {
         CHECK_TEXTS("checkTexts", "CheckTextsRequest");
         String method;
         String reqName;
+
         public String getMethod(){
             return method;}
-        public String getReqName(){
+
+            public String getReqName(){
             return reqName;}
 
         private SoapAction(String action, String reqName) {
