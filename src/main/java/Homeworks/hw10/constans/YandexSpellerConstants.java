@@ -2,6 +2,8 @@ package Homeworks.hw10.constans;
 
 public class YandexSpellerConstants {
 
+    public static final String YANDEX_SPELLER_API_URI ="src/test/resources/test.properties/yandex_speller_url";
+
     public static final String PARAM_TEXT = "text";
     public static final String PARAM_OPTIONS = "options";
     public static final String PARAM_LANGS = "languages";
